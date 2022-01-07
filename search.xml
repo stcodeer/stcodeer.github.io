@@ -4,9 +4,36 @@
   
     
     <entry>
+      <title>线性代数的几何意义</title>
+      <link href="/2022/01/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89/"/>
+      <url>/2022/01/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89/</url>
+      
+        <content type="html"><![CDATA[<p>基于3Blue1Brown科普内容的总结，关于线性代数的本质。</p><h2 id="3Blue1Brown原视频链接"><a href="#3Blue1Brown原视频链接" class="headerlink" title="3Blue1Brown原视频链接"></a>3Blue1Brown原视频链接</h2><p><a href="https://www.bilibili.com/medialist/play/watchlater/BV1ys411472E">【官方双语/合集】线性代数的本质 - 系列合集</a></p><h2 id="张成与基"><a href="#张成与基" class="headerlink" title="张成与基"></a>张成与基</h2><p>向量集合的张成是所有能表示的点所构成的线性空间。</p><p>基即最小的向量集合，使得该集合的张成等于当前线性空间。</p><h2 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h2><p>线性变换是指满足可加性，数乘性的离散函数，有输入，有输出。通俗来说，线性变换的几何意义是原点不变且直线在变换后仍为直线，更直观的表示是原点不变且网格线变换前后保持平行且等距离。</p><h2 id="矩阵与矩阵乘法"><a href="#矩阵与矩阵乘法" class="headerlink" title="矩阵与矩阵乘法"></a>矩阵与矩阵乘法</h2><p>矩阵的几何意义是线性变换，矩阵乘法的几何意义是线性变换的叠加。</p><h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><p>方阵的行列式的几何定义是有向的放缩倍率。</p><h2 id="非方阵"><a href="#非方阵" class="headerlink" title="非方阵"></a>非方阵</h2><p>非方阵也是高维到低维的线性变换。</p><h2 id="点积"><a href="#点积" class="headerlink" title="点积"></a>点积</h2><p>点积的式子可以用对偶性来证明，看成对于一个向量的非方阵线性变换，使得其位于另一个向量的直线上。</p><h2 id="叉积"><a href="#叉积" class="headerlink" title="叉积"></a>叉积</h2><p>二维叉积是有向面积，就是将其看作二维线性变换后的放缩倍率，即行列式。</p><p>三维叉积的面积即将两个向量和另一个单位向量（看作可变向量，但将其认为是单位向量）看作三维线性变换后得到的放缩倍率，即行列式。但最终得到的行列式实际上是个与两个向量垂直的向量，且长度才为叉积值。此处可以用对偶性来证明，将该行列式等同于求得向量与可变向量的点积，显然无论该可变向量如何变化都是成立的，可变向量在所求向量上的投影=可变向量在六面体的高，所求向量长度=底面积叉积，所以叉积的本质就是这个求得向量。</p><h2 id="特征向量与特征值"><a href="#特征向量与特征值" class="headerlink" title="特征向量与特征值"></a>特征向量与特征值</h2><p>特征向量是线性变换中张成空间不变的向量。</p><p>特征值是特征向量的变化率。（$A<em>v=\lambda</em>v$，$A$是线性变换矩阵，$\lambda$是特征值，$v$是特征向量）</p><h2 id="相似对角化"><a href="#相似对角化" class="headerlink" title="相似对角化"></a>相似对角化</h2><p>$A^{-1}<em>M</em>A$实际上是在非标准基下进行标准视角下的变换。（比如说旋转$90$度，标准基下乘上$M$即可，但是非标准基下要乘上$A^{-1}<em>M</em>A$，$A$是用来转化成标准基的线性变换矩阵）</p><p>如果可以选$n$个特征向量张成整个空间的话，那么可以将这$n$个向量看作新的基底，此时线性变换在该基底下一定是对角阵，即有$A^{-1}<em>M</em>A=D$。（$D$是对角阵）（基向量都是特征向量的话，线性变换一定是对角阵）</p><p>方阵快速幂：</p><p><img src="https://www.ipicbed.com/images/2022/01/08/l1.png" alt="方阵快速幂1"></p><p><img src="https://www.ipicbed.com/images/2022/01/08/l2.png" alt="方阵快速幂2"></p><p><img src="https://www.ipicbed.com/images/2022/01/08/l3.png" alt="方阵快速幂3"></p><p><img src="https://www.ipicbed.com/images/2022/01/08/l4.png" alt="方阵快速幂4"></p><h2 id="向量的抽象"><a href="#向量的抽象" class="headerlink" title="向量的抽象"></a>向量的抽象</h2><p>满足八大公理的结构都能被看作向量，存在线性变换，也有之前所推导的性质。例如函数也可以看作一种有无穷维度的向量，同样有基底（$1,x^1,x^2,x^3,…$）。线性变换即线性算子（如求导等，可以用无穷阶的方阵表示），点积即内积，特征向量即特征函数等等。</p><p><img src="https://www.ipicbed.com/images/2022/01/07/linear_atoms.png" alt="八大公理"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linear Algebra </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Knowledge Summary </tag>
+            
+            <tag> 3Blue1Brown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello Hexo</title>
-      <link href="/2022/01/04/hello-world/"/>
-      <url>/2022/01/04/hello-world/</url>
+      <link href="/2022/01/04/hello%20hexo/"/>
+      <url>/2022/01/04/hello%20hexo/</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
