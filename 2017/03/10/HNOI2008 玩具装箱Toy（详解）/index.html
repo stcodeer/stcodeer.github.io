@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HNOI2008 玩具装箱Toy（详解） | Tong Su</title><meta name="keywords" content="Dynamic Programming,Monotonicity In Decision,Chinese"><meta name="author" content="Tong Su,stcodeer@gmail.com"><meta name="copyright" content="Tong Su"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="关于斜率优化推导方法的详细介绍，以及玩具装箱Toy一题的题解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HNOI2008 玩具装箱Toy（详解）">
+<meta property="og:url" content="https://tong-su.com/2017/03/10/HNOI2008%20%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1Toy%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89/index.html">
+<meta property="og:site_name" content="Tong Su">
+<meta property="og:description" content="关于斜率优化推导方法的详细介绍，以及玩具装箱Toy一题的题解。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.ipicbed.com/images/2022/01/07/ST.jpg">
+<meta property="article:published_time" content="2017-03-10T08:34:25.000Z">
+<meta property="article:modified_time" content="2022-01-09T09:20:01.805Z">
+<meta property="article:author" content="Tong Su">
+<meta property="article:tag" content="Dynamic Programming">
+<meta property="article:tag" content="Monotonicity In Decision">
+<meta property="article:tag" content="Chinese">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ipicbed.com/images/2022/01/07/ST.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://tong-su.com/2017/03/10/HNOI2008%20%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1Toy%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HNOI2008 玩具装箱Toy（详解）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-09 17:20:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.ipicbed.com/images/2022/01/07/ST.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Tong Su</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">HNOI2008 玩具装箱Toy（详解）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2017-03-10T08:34:25.000Z" title="Created 2017-03-10 16:34:25">2017-03-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-09T09:20:01.805Z" title="Updated 2022-01-09 17:20:01">2022-01-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI-ACM-Algo-Competition/">OI / ACM (Algo. Competition)</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>5min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HNOI2008 玩具装箱Toy（详解）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><div class="note info modern"><p>本文移植自个人的原博客（<a target="_blank" rel="noopener external nofollow noreferrer" href="http://deprecated.tong-su.com/2017/03/10/%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1toy/">原文</a>）</p>
+</div>
+
+<h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.luogu.com.cn/problem/P3195">Luogu 3195</a></p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p><img src="https://www.ipicbed.com/images/2022/01/09/toy1.png" alt="题目描述"></p>
+<h1 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h1><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p><img src="https://www.ipicbed.com/images/2022/01/09/toy2.png" alt="输入格式"></p>
+<h2 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h2><p><img src="https://www.ipicbed.com/images/2022/01/09/toy3.png" alt="输出格式"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h2><p>设$dp[i]$为处理前$i$个玩具的最小花费，$a[i]$为前$i$个玩具长度的前缀和。</p>
+<p>易得转移方程为$dp[i]=min \lbrace  dp[j]+(i−j−1+a[i]−a[j]−l)^2 \rbrace (0 \leq i &lt; j \leq n)$</p>
+<p>此方法时间复杂度为$O(n^2)$，只能水到20分。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">50005</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n,l,dp[N],a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//    freopen(&quot;bzoj_1010.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line"><span class="comment">//    freopen(&quot;bzoj_1010.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;l);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]),a[i]+=a[i<span class="number">-1</span>];</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">    dp[i]=<span class="built_in">min</span>(dp[i],dp[j]+(i-j<span class="number">-1</span>+a[i]-a[j]-l)*(i-j<span class="number">-1</span>+a[i]-a[j]-l));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,dp[n]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="单调性"><a href="#单调性" class="headerlink" title="单调性"></a>单调性</h2><p>观察该题数据范围和状态只有一维的转移方程，我们可以尝试通过斜率优化将时间复杂度降到$O(n)$。</p>
+<p>斜率优化中涉及单调队列的使用，自然要求方程满足决策单调性，一般可以通过决策表的方法进行验证，对于此题来说，数据容易生成，可以尝试一下。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">50005</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n,l,dp[N],a[N],best[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//    freopen(&quot;bzoj_1010.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line"><span class="comment">//    freopen(&quot;bzoj_1010.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;l);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]),a[i]+=a[i<span class="number">-1</span>];</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">    dp[i]=<span class="built_in">min</span>(dp[i],dp[j]+(i-j<span class="number">-1</span>+a[i]-a[j]-l)*(i-j<span class="number">-1</span>+a[i]-a[j]-l))，best[i]=j;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,best[i]);<span class="comment">//决策表</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,dp[n]);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>易观察到$best[i]$单调不降，满足决策单调性。</p>
+<p>证明见下：</p>
+<p>对于$dp[i]$，当其由$dp[k]$转移而来优于$dp[j]$时，有</p>
+<p>$$dp[k]+(i−k−1+a[i]−a[k]−l)^2 &lt; dp[j]+(i−j−1+a[i]−a[j]−l)^2$$</p>
+<p>$$dp[k]−dp[j] &lt; (i−j−1+a[i]−a[j]−l)^2−(i−k−1+a[i]−a[k]−l)^2$$</p>
+<p>对于该方程，可设</p>
+<p>$$b[i]=a[i]+i$$</p>
+<p>$$l=l+1$$</p>
+<p>则有</p>
+<p>$$dp[k]−dp[j]&lt;(b[i]−b[j]−l)^2−(b[i]−b[k]−l)^2$$</p>
+<p>化简得</p>
+<p>$$((dp[k]+b[k]^2)−(dp[j]+b[j]^2))/(b[k]−b[j])&lt;2b[i]−2l$$</p>
+<p>此时的形式为点斜式方程：</p>
+<p>$$(yk−yj)/(xk−xj) &lt; ansi$$</p>
+<p>已知$b[i]$为前缀和的形式，所以$b[i]$单调递增，可知斜率为单调递增。则适用决策单调性。</p>
+<p>设</p>
+<p>$$g[k,j]=(yk−yj)/(xk−xj)$$</p>
+<p>则当且仅当$g[A1,A2] &lt; b[i]−2l$时，由$A1$转移而来优于$A2$。</p>
+<p><strong>当$g[c,b] &lt; g[b,a]$时,易证得$b$必不为最优决策。</strong></p>
+<p><strong>当$g[c,b] &lt; ansi$，此时$c$决策优于$b$，则$b$一定不为最优决策。</strong></p>
+<p><strong>当$g[c,b]&gt;=ansi$，此时$b$决策优于$c$，但又有$g[b,a]&gt;g[c,b]&gt;=ansi$,此时$b$决策不优于$a$决策。</strong></p>
+<p><strong>综上所述，则可将所有满足$g[c,b] &lt; g[b,a]$的决策$b$排除掉。此时函数满足上凸的性质，即有斜率递减。</strong></p>
+<h2 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h2><p><strong>以下我们便可以进行斜率优化（严格建立在决策单调性的基础上）：</strong></p>
+<p><strong>1： 用单调队列维护点集信息。</strong></p>
+<p><strong>2： 求解$dp[i]$，可以从队首开始扫描，当$g(head+1,head) &lt; ansi$时，可知$head+1$优于$head$，故继续扫描，直到不满足条件，此时$bext[i]=head$,即使$dp[i]$最优的决策为队首。</strong></p>
+<p><strong>3： 当加入点$i$，我们要维护队列的上凸性质,即从队尾开始扫描，判断$g(i,tail)$是否小于$g(tail，tail-1)$，如果满足，则可删除$tail$，并继续扫描，直到不满足该条件，则$i$在此处入队，队列仍满足上凸性质。</strong></p>
+<p>AC代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">50005</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n,l,a[N],b[N],dp[N],q[N];</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">g</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> k,<span class="keyword">long</span> <span class="keyword">long</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((dp[k]+b[k]*b[k])-(dp[j]+b[j]*b[j]))/(b[k]-b[j]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//    freopen(&quot;bzoj_1010.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line"><span class="comment">//    freopen(&quot;bzoj_1010.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;l);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,a+i),a[i]+=a[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)b[i]=a[i]+i;</span><br><span class="line">    l++;</span><br><span class="line">    <span class="keyword">int</span> head=<span class="number">1</span>,tail=<span class="number">1</span>;</span><br><span class="line">    q[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(head&lt;tail&amp;&amp;<span class="built_in">g</span>(q[head+<span class="number">1</span>],q[head])&lt;<span class="number">2</span>*b[i]<span class="number">-2</span>*l)head++;</span><br><span class="line">        <span class="keyword">int</span> j=q[head];</span><br><span class="line">        dp[i]=dp[j]+(b[i]-b[j]-l)*(b[i]-b[j]-l);</span><br><span class="line">        <span class="keyword">while</span>(head&lt;tail&amp;&amp;<span class="built_in">g</span>(i,q[tail])&lt;<span class="built_in">g</span>(q[tail],q[tail<span class="number">-1</span>]))tail--;</span><br><span class="line">        q[++tail]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,dp[n]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:stcodeer@gmail.com" rel="external nofollow noreferrer">Tong Su</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://tong-su.com/2017/03/10/HNOI2008%20%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1Toy%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89/">https://tong-su.com/2017/03/10/HNOI2008%20%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1Toy%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Dynamic-Programming/">Dynamic Programming</a><a class="post-meta__tags" href="/tags/Monotonicity-In-Decision/">Monotonicity In Decision</a><a class="post-meta__tags" href="/tags/Chinese/">Chinese</a></div><div class="post_share"><div class="social-share" data-image="https://www.ipicbed.com/images/2022/01/07/ST.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/04/hello%20hexo/"><img class="prev-cover" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.zyiz.net%2Fupload%2F202002%2F18%2F202002182223498227.png&amp;refer=http%3A%2F%2Fwww.zyiz.net&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1644041194&amp;t=9bf8dc73d5ac3524f2207f98f1a07d4c" onerror="onerror=null;src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Hello Hexo</div></div></a></div><div class="next-post pull-right"><a href="/2017/03/08/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84%E5%8D%81%E4%B8%89%E9%A2%98/"><img class="next-cover" src="/" onerror="onerror=null;src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">后缀数组十三题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/01/09/Hexo%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="Hexo+Butterfly 基本用法"><img class="cover" src="https://www.ipicbed.com/images/2022/01/09/hexo.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-09</div><div class="title">Hexo+Butterfly 基本用法</div></div></a></div><div><a href="/2022/01/09/Markdown%E4%B8%8EMathjax%E7%9A%84%E5%86%B2%E7%AA%81/" title="Markdown与Mathjax的冲突"><img class="cover" src="/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-09</div><div class="title">Markdown与Mathjax的冲突</div></div></a></div><div><a href="/2017/03/07/C%20C++%20Coding%20Style/" title="C/C++ Coding Style"><img class="cover" src="https://www.ipicbed.com/images/2022/01/08/C-CodingStyle.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-03-07</div><div class="title">C/C++ Coding Style</div></div></a></div><div><a href="/2017/03/08/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84%E5%8D%81%E4%B8%89%E9%A2%98/" title="后缀数组十三题"><img class="cover" src="/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-03-08</div><div class="title">后缀数组十三题</div></div></a></div><div><a href="/2022/01/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89/" title="线性代数的几何意义"><img class="cover" src="https://www.ipicbed.com/images/2022/01/07/linear_3blue1brown.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-07</div><div class="title">线性代数的几何意义</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.ipicbed.com/images/2022/01/07/ST.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Tong Su</div><div class="author-info__description">OIER | ACMER</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/stcodeer" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:stcodeer@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="mailto:770780079@qq.com" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://www.zhihu.com/people/su-tong-75-78" rel="external nofollow noreferrer" target="_blank" title="Zhihu"><i class="fab fa-zhihu"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">输入输出格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1"><span class="toc-number">3.2.</span> <span class="toc-text">输出格式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B"><span class="toc-number">4.1.</span> <span class="toc-text">暴力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%B0%83%E6%80%A7"><span class="toc-number">4.2.</span> <span class="toc-text">单调性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95"><span class="toc-number">4.3.</span> <span class="toc-text">具体方法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/09/Markdown%E4%B8%8EMathjax%E7%9A%84%E5%86%B2%E7%AA%81/" title="Markdown与Mathjax的冲突">Markdown与Mathjax的冲突</a><time datetime="2022-01-09T08:48:11.000Z" title="Created 2022-01-09 16:48:11">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/09/Hexo%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="Hexo+Butterfly 基本用法"><img src="https://www.ipicbed.com/images/2022/01/09/hexo.jpg" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="Hexo+Butterfly 基本用法"/></a><div class="content"><a class="title" href="/2022/01/09/Hexo%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="Hexo+Butterfly 基本用法">Hexo+Butterfly 基本用法</a><time datetime="2022-01-09T06:45:48.000Z" title="Created 2022-01-09 14:45:48">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89/" title="线性代数的几何意义"><img src="https://www.ipicbed.com/images/2022/01/07/linear_3blue1brown.png" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="线性代数的几何意义"/></a><div class="content"><a class="title" href="/2022/01/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89/" title="线性代数的几何意义">线性代数的几何意义</a><time datetime="2022-01-07T15:42:10.817Z" title="Created 2022-01-07 23:42:10">2022-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/04/hello%20hexo/" title="Hello Hexo"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.zyiz.net%2Fupload%2F202002%2F18%2F202002182223498227.png&amp;refer=http%3A%2F%2Fwww.zyiz.net&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1644041194&amp;t=9bf8dc73d5ac3524f2207f98f1a07d4c" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="Hello Hexo"/></a><div class="content"><a class="title" href="/2022/01/04/hello%20hexo/" title="Hello Hexo">Hello Hexo</a><time datetime="2022-01-04T12:13:15.441Z" title="Created 2022-01-04 20:13:15">2022-01-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2017/03/10/HNOI2008%20%E7%8E%A9%E5%85%B7%E8%A3%85%E7%AE%B1Toy%EF%BC%88%E8%AF%A6%E8%A7%A3%EF%BC%89/" title="HNOI2008 玩具装箱Toy（详解）">HNOI2008 玩具装箱Toy（详解）</a><time datetime="2017-03-10T08:34:25.000Z" title="Created 2017-03-10 16:34:25">2017-03-10</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2022 By Tong Su</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'c86c0c2c60193795d900',
+      clientSecret: '6552e1c998222295ccbca48579955b64479d7938',
+      repo: 'Blog-Comments',
+      owner: 'stcodeer',
+      admin: ['stcodeer'],
+      id: '1a8caae7936f90774c3e5386bc8e408c',
+      language: 'en',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
