@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>普通平衡树 | Tong Su</title><meta name="keywords" content="Chinese,C/C++,Balance Tree"><meta name="author" content="Tong Su,stcodeer@gmail.com"><meta name="copyright" content="Tong Su"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一道平衡树的模板题，支持插入，删除，查询排名，前驱后继操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="普通平衡树">
+<meta property="og:url" content="https://tong-su.com/2017/03/19/Normal-Balance-Tree/index.html">
+<meta property="og:site_name" content="Tong Su">
+<meta property="og:description" content="一道平衡树的模板题，支持插入，删除，查询排名，前驱后继操作。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.ipicbed.com/images/2022/01/07/ST.jpg">
+<meta property="article:published_time" content="2017-03-19T05:30:02.000Z">
+<meta property="article:modified_time" content="2022-01-11T05:37:03.393Z">
+<meta property="article:author" content="Tong Su">
+<meta property="article:tag" content="Chinese">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="Balance Tree">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ipicbed.com/images/2022/01/07/ST.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://tong-su.com/2017/03/19/Normal-Balance-Tree/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '普通平衡树',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-11 13:37:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.ipicbed.com/images/2022/01/07/ST.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Tong Su</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">普通平衡树</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2017-03-19T05:30:02.000Z" title="Created 2017-03-19 13:30:02">2017-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-11T05:37:03.393Z" title="Updated 2022-01-11 13:37:03">2022-01-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI-ACM-Algo-Competition/">OI / ACM (Algo. Competition)</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>8min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="普通平衡树"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><div class="note info modern"><p>本文移植自个人的原博客（<a target="_blank" rel="noopener external nofollow noreferrer" href="http://deprecated.tong-su.com/2017/03/19/%E6%99%AE%E9%80%9A%E5%B9%B3%E8%A1%A1%E6%A0%91/#more">原文</a>）</p>
+</div>
+
+<h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://218.28.19.228:8081/cogs/problem/problem.php?pid=vJJxmkUVP">COGS 1829</a></p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>您需要写一种数据结构（可参考题目标题），来维护一些数，其中需要提供以下操作：</p>
+<ol>
+<li><p>插入$x$数；</p>
+</li>
+<li><p>删除$x$数(若有多个相同的数，因只删除一个)；</p>
+</li>
+<li><p>查询$x$数的排名(若有多个相同的数，因输出最小的排名)；</p>
+</li>
+<li><p>查询排名为$x$的数；</p>
+</li>
+<li><p>求$x$的前驱(前驱定义为小于$x$，且最大的数)；</p>
+</li>
+<li><p>求$x$的后继(后继定义为大于$x$，且最小的数)。</p>
+</li>
+</ol>
+<h1 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h1><h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行为$n$，表示操作的个数，下面$n$行每行有两个数$opt$和$x$，$opt$表示操作的序号$(1&lt;=opt&lt;=6)$，$x$含义如上所示。</p>
+<p>$n$的数据范围：$n&lt;=100000$</p>
+<p>每个数的数据范围：$[−1e7,1e7]$（BZOJ3224:$[−2e9,2e9]$）</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对于操作$3,4,5,6$每行输出一个数，表示对应答案。</p>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">10</span><br><span class="line">1 106465</span><br><span class="line">4 1</span><br><span class="line">1 317721</span><br><span class="line">1 460929</span><br><span class="line">1 644985</span><br><span class="line">1 84185</span><br><span class="line">1 89851</span><br><span class="line">6 81968</span><br><span class="line">1 492737</span><br><span class="line">5 493598</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">106465</span><br><span class="line">84185</span><br><span class="line">492737</span><br></pre></td></tr></table></figure>
+
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>各种平衡树的模板题（包括SPLAY，TREAP，SBT等等。然而只会SPLAY）</p>
+<h2 id="V1"><a href="#V1" class="headerlink" title="V1"></a>V1</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span>+<span class="number">1</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">splay</span>&#123;</span><span class="keyword">int</span> data,ls,rs,fa,size;&#125;a[N];  </span><br><span class="line"><span class="keyword">int</span> q,root=<span class="number">0</span>,tot=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushup</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;a[x].size=a[a[x].ls].size+a[a[x].rs].size+<span class="number">1</span>;&#125;  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">zig</span><span class="params">(<span class="keyword">int</span> x)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> y=a[x].fa; </span><br><span class="line">    <span class="keyword">int</span> z=a[y].fa; </span><br><span class="line">    a[y].fa=x;a[x].fa=z;  </span><br><span class="line">    a[y].ls=a[x].rs;a[a[x].rs].fa=y;a[x].rs=y;  </span><br><span class="line">    <span class="keyword">if</span>(y==a[z].ls)    a[z].ls=x;</span><br><span class="line">    <span class="keyword">else</span>             a[z].rs=x;</span><br><span class="line">    <span class="built_in">pushup</span>(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">zag</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y=a[x].fa;  </span><br><span class="line">    <span class="keyword">int</span> z=a[y].fa;</span><br><span class="line">    a[y].fa=x,a[x].fa=z;</span><br><span class="line">    a[y].rs=a[x].ls;a[a[x].ls].fa=y;a[x].ls=y;</span><br><span class="line">    <span class="keyword">if</span>(y==a[z].ls)     a[z].ls=x;</span><br><span class="line">    <span class="keyword">else</span>             a[z].rs=x;</span><br><span class="line">    <span class="built_in">pushup</span>(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">splay</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> s)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">while</span> (a[x].fa!=s)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">int</span> y=a[x].fa;  </span><br><span class="line">        <span class="keyword">int</span> z=a[y].fa;  </span><br><span class="line">        <span class="keyword">if</span>(z==s)  </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(x==a[y].ls) <span class="built_in">zig</span>(x);  </span><br><span class="line">            <span class="keyword">else</span>           <span class="built_in">zag</span>(x);  </span><br><span class="line">            <span class="keyword">break</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">if</span>(y==a[z].ls)  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="keyword">if</span>(x==a[y].ls) <span class="built_in">zig</span>(y),<span class="built_in">zig</span>(x);  </span><br><span class="line">            <span class="keyword">else</span>           <span class="built_in">zag</span>(x),<span class="built_in">zig</span>(x);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="keyword">if</span>(x==a[y].rs) <span class="built_in">zag</span>(y),<span class="built_in">zag</span>(x);  </span><br><span class="line">            <span class="keyword">else</span>           <span class="built_in">zig</span>(x),<span class="built_in">zag</span>(x);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">pushup</span>(x);  </span><br><span class="line">    <span class="keyword">if</span> (s==<span class="number">0</span>) root=x;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Search</span><span class="params">(<span class="keyword">int</span> w)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> p,x=root;  </span><br><span class="line">    <span class="keyword">while</span> (x)  </span><br><span class="line">    &#123;  </span><br><span class="line">        p=x;  </span><br><span class="line">        <span class="keyword">if</span> (a[x].data&gt;w) x=a[x].ls;  </span><br><span class="line">        <span class="keyword">else</span> x=a[x].rs;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> p;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">newnode</span><span class="params">(<span class="keyword">int</span> &amp;x,<span class="keyword">int</span> fa,<span class="keyword">int</span> key)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    x=++tot;  </span><br><span class="line">    a[x].ls=a[x].rs=<span class="number">0</span>;  </span><br><span class="line">    a[x].fa=fa;  </span><br><span class="line">    a[x].data=key;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> w)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (root==<span class="number">0</span>)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="built_in">newnode</span>(root,<span class="number">0</span>,w);  </span><br><span class="line">        <span class="keyword">return</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">int</span> i=<span class="built_in">Search</span>(w);  </span><br><span class="line">    <span class="keyword">if</span> (w&lt;a[i].data) <span class="built_in">newnode</span>(a[i].ls,i,w);     </span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">newnode</span>(a[i].rs,i,w);</span><br><span class="line">    <span class="built_in">splay</span>(tot,<span class="number">0</span>);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> w)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=root,ans=tot+<span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">while</span>(x)  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">if</span>(a[x].data&gt;w)&#123;x=a[x].ls;<span class="keyword">continue</span>;&#125;  </span><br><span class="line">        <span class="keyword">if</span>(a[x].data&lt;w)&#123;x=a[x].rs;<span class="keyword">continue</span>;&#125;  </span><br><span class="line">        <span class="keyword">if</span>(a[x].data==w)  </span><br><span class="line">        &#123;  </span><br><span class="line">            ans=x;</span><br><span class="line">            x=a[x].ls; </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">if</span>(ans==tot+<span class="number">1</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> ans;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getmax</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">while</span>(a[x].rs)x=a[x].rs;<span class="keyword">return</span> x;&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getmin</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">while</span> (a[x].ls)x=a[x].ls;<span class="keyword">return</span> x;&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getpre1</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> <span class="built_in">getmax</span>(a[root].ls);&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getne1</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> <span class="built_in">getmin</span>(a[root].rs);&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delet</span><span class="params">(<span class="keyword">int</span> w)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> x=<span class="built_in">get</span>(w);  </span><br><span class="line">    <span class="built_in">splay</span>(x,<span class="number">0</span>);  </span><br><span class="line">    <span class="keyword">int</span> pp=<span class="built_in">getpre1</span>(x),nn=<span class="built_in">getne1</span>(x);  </span><br><span class="line">    <span class="built_in">splay</span>(pp,<span class="number">0</span>);  </span><br><span class="line">    <span class="built_in">splay</span>(nn,root);  </span><br><span class="line">    <span class="keyword">int</span> y=a[x].fa;  </span><br><span class="line">    a[x].fa=<span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">if</span>(x==a[y].ls) a[y].ls=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span>           a[x].ls=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">pushup</span>(y);<span class="built_in">pushup</span>(root);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> w)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> x=<span class="built_in">get</span>(w);  </span><br><span class="line">    <span class="built_in">splay</span>(x,<span class="number">0</span>);  </span><br><span class="line">    <span class="keyword">return</span> a[a[x].ls].size;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findkth</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> k)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> s=a[a[x].ls].size;  </span><br><span class="line">    <span class="keyword">if</span> (k==s+<span class="number">1</span>) <span class="keyword">return</span> a[x].data;  </span><br><span class="line">    <span class="keyword">if</span> (s&gt;=k) <span class="keyword">return</span> <span class="built_in">findkth</span>(a[x].ls,k);  </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">findkth</span>(a[x].rs,k-s<span class="number">-1</span>);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getpre</span><span class="params">(<span class="keyword">int</span> w)</span> </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> y=<span class="built_in">get</span>(w);  </span><br><span class="line">    <span class="built_in">insert</span>(w);  </span><br><span class="line">    <span class="keyword">if</span>(y!=<span class="number">-1</span>)<span class="built_in">splay</span>(y,<span class="number">0</span>);  </span><br><span class="line">    <span class="keyword">int</span> ans=<span class="built_in">getmax</span>(a[root].ls);  </span><br><span class="line">    <span class="built_in">delet</span>(w);  </span><br><span class="line">    <span class="keyword">return</span> a[ans].data;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getne</span><span class="params">(<span class="keyword">int</span> w)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="built_in">insert</span>(w);</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="built_in">getmin</span>(a[root].rs);</span><br><span class="line">    <span class="built_in">delet</span>(w);</span><br><span class="line">    <span class="keyword">return</span> a[ans].data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    root=tot=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">insert</span>(-inf);<span class="built_in">insert</span>(inf);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;q);</span><br><span class="line">    <span class="keyword">while</span>(q--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x,k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;k);</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">1</span>)       <span class="built_in">insert</span>(k);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x==<span class="number">2</span>) <span class="built_in">delet</span>(k);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x==<span class="number">3</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">find</span>(k));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x==<span class="number">4</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">findkth</span>(root,k+<span class="number">1</span>));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x==<span class="number">5</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">getpre</span>(k));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x==<span class="number">6</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">getne</span>(k));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+
+<h2 id="V2"><a href="#V2" class="headerlink" title="V2"></a>V2</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> tot,root,size[N],num[N],key[N],fa[N],son[N][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushup</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    size[x]=size[son[x][<span class="number">0</span>]]+size[son[x][<span class="number">1</span>]]+num[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">zg</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//push_down(fa[x]);push_down(x); </span></span><br><span class="line">    <span class="keyword">int</span> y=fa[x],z=fa[y],t=(son[y][<span class="number">0</span>]==x);</span><br><span class="line">    <span class="keyword">if</span>(z) son[z][son[z][<span class="number">1</span>]==y]=x;fa[x]=z;</span><br><span class="line">    son[y][!t]=son[x][t];fa[son[y][!t]]=y;</span><br><span class="line">    son[x][t]=y;fa[y]=x;</span><br><span class="line">    <span class="built_in">pushup</span>(y);<span class="built_in">pushup</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">splay</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(fa[x]!=f)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> y=fa[x],z=fa[y];</span><br><span class="line">        <span class="keyword">if</span>(z!=f)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(son[z][<span class="number">0</span>]==y^son[y][<span class="number">0</span>]==x) <span class="built_in">zg</span>(x);</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">zg</span>(y);</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="built_in">zg</span>(x);    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!f) root=x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> &amp;x,<span class="keyword">int</span> v,<span class="keyword">int</span> f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!x)</span><br><span class="line">    &#123;</span><br><span class="line">        x=++tot;</span><br><span class="line">        son[x][<span class="number">0</span>]=son[x][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">        size[x]=num[x]=<span class="number">1</span>;</span><br><span class="line">        key[x]=v;fa[x]=f;</span><br><span class="line">        <span class="built_in">splay</span>(x,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(v==key[x])</span><br><span class="line">    &#123;</span><br><span class="line">        num[x]++;size[x]++;</span><br><span class="line">        <span class="built_in">splay</span>(x,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">insert</span>(son[x][v&gt;key[x]],v,x);</span><br><span class="line">    <span class="built_in">pushup</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=root;</span><br><span class="line">    <span class="keyword">while</span>(x&amp;&amp;v!=key[x]) x=son[x][v&gt;key[x]];</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delet</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x=<span class="built_in">get</span>(x);<span class="keyword">if</span>(!x) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">splay</span>(x,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(num[x]&gt;<span class="number">1</span>) &#123;num[x]--;size[x]--;<span class="keyword">return</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span>(!son[x][<span class="number">0</span>]||!son[x][<span class="number">1</span>]) root=son[x][<span class="number">0</span>]+son[x][<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> y=son[x][<span class="number">1</span>];<span class="keyword">while</span>(son[y][<span class="number">0</span>]) y=son[y][<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">splay</span>(y,x);</span><br><span class="line">        son[y][<span class="number">0</span>]=son[x][<span class="number">0</span>];fa[son[y][<span class="number">0</span>]]=y;</span><br><span class="line">        root=y;</span><br><span class="line">    &#125;</span><br><span class="line">    fa[root]=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">pushup</span>(root);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getrank</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">insert</span>(root,v,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> ans=size[son[root][<span class="number">0</span>]]+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">delet</span>(v);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kth</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y=root;</span><br><span class="line">    <span class="keyword">while</span>(x&lt;=size[son[y][<span class="number">0</span>]]||x&gt;size[son[y][<span class="number">0</span>]]+num[y])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;=size[son[y][<span class="number">0</span>]]) y=son[y][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> x-=size[son[y][<span class="number">0</span>]]+num[y],y=son[y][<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> key[y];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pre</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">insert</span>(root,v,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> x=son[root][<span class="number">0</span>];<span class="keyword">while</span>(son[x][<span class="number">1</span>]) x=son[x][<span class="number">1</span>];</span><br><span class="line">    <span class="built_in">delet</span>(v);</span><br><span class="line">    <span class="keyword">return</span> key[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ne</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">insert</span>(root,v,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> x=son[root][<span class="number">1</span>];<span class="keyword">while</span>(son[x][<span class="number">0</span>]) x=son[x][<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">delet</span>(v);</span><br><span class="line">    <span class="keyword">return</span> key[x];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,x,y;i&lt;=n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">1</span>)         <span class="built_in">insert</span>(root,y,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">2</span>)         <span class="built_in">delet</span>(y);</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">3</span>)         <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">getrank</span>(y));</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">4</span>)         <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">kth</span>(y));</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">5</span>)         <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">pre</span>(y));</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">6</span>)        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">ne</span>(y));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:stcodeer@gmail.com" rel="external nofollow noreferrer">Tong Su</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://tong-su.com/2017/03/19/Normal-Balance-Tree/">https://tong-su.com/2017/03/19/Normal-Balance-Tree/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Chinese/">Chinese</a><a class="post-meta__tags" href="/tags/C-C/">C/C++</a><a class="post-meta__tags" href="/tags/Balance-Tree/">Balance Tree</a></div><div class="post_share"><div class="social-share" data-image="https://www.ipicbed.com/images/2022/01/07/ST.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/04/hello-hexo/"><img class="prev-cover" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.zyiz.net%2Fupload%2F202002%2F18%2F202002182223498227.png&amp;refer=http%3A%2F%2Fwww.zyiz.net&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1644041194&amp;t=9bf8dc73d5ac3524f2207f98f1a07d4c" onerror="onerror=null;src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Hello Hexo</div></div></a></div><div class="next-post pull-right"><a href="/2017/03/18/DNA-Sequence/"><img class="next-cover" src="/" onerror="onerror=null;src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">POJ2778 DNA Sequence</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2017/03/07/C-C++-Coding-Style/" title="C/C++ Coding Style"><img class="cover" src="https://www.ipicbed.com/images/2022/01/08/C-CodingStyle.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-03-07</div><div class="title">C/C++ Coding Style</div></div></a></div><div><a href="/2017/03/10/HNOI2008-toy/" title="HNOI2008 玩具装箱Toy（详解）"><img class="cover" src="/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-03-10</div><div class="title">HNOI2008 玩具装箱Toy（详解）</div></div></a></div><div><a href="/2017/03/12/NOIP-2017-3-12/" title="NOIP模拟赛 2017-03-12"><img class="cover" src="/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-03-12</div><div class="title">NOIP模拟赛 2017-03-12</div></div></a></div><div><a href="/2017/03/11/SCOI2010-stock/" title="SCOI2010 股票交易"><img class="cover" src="/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-03-11</div><div class="title">SCOI2010 股票交易</div></div></a></div><div><a href="/2017/03/14/HAOI2007-square/" title="HAOI2007 理想的正方形"><img class="cover" src="/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-03-14</div><div class="title">HAOI2007 理想的正方形</div></div></a></div><div><a href="/2017/03/18/DNA-Sequence/" title="POJ2778 DNA Sequence"><img class="cover" src="/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-03-18</div><div class="title">POJ2778 DNA Sequence</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.ipicbed.com/images/2022/01/07/ST.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Tong Su</div><div class="author-info__description">OIER | ACMER</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/stcodeer" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:stcodeer@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="mailto:770780079@qq.com" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://www.zhihu.com/people/su-tong-75-78" rel="external nofollow noreferrer" target="_blank" title="Zhihu"><i class="fab fa-zhihu"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">输入输出格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">输出格式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B"><span class="toc-number">4.</span> <span class="toc-text">样例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"><span class="toc-number">4.1.</span> <span class="toc-text">输入样例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="toc-number">4.2.</span> <span class="toc-text">输出样例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-number">5.</span> <span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#V1"><span class="toc-number">5.1.</span> <span class="toc-text">V1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#V2"><span class="toc-number">5.2.</span> <span class="toc-text">V2</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/09/Markdown-Mathjax/" title="Markdown与Mathjax的冲突">Markdown与Mathjax的冲突</a><time datetime="2022-01-09T08:48:11.000Z" title="Created 2022-01-09 16:48:11">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/09/Hexo-basis/" title="Hexo+Butterfly 基本用法"><img src="https://www.ipicbed.com/images/2022/01/09/hexo.jpg" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="Hexo+Butterfly 基本用法"/></a><div class="content"><a class="title" href="/2022/01/09/Hexo-basis/" title="Hexo+Butterfly 基本用法">Hexo+Butterfly 基本用法</a><time datetime="2022-01-09T06:45:48.000Z" title="Created 2022-01-09 14:45:48">2022-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/07/linear-geometry/" title="线性代数的几何意义"><img src="https://www.ipicbed.com/images/2022/01/07/linear_3blue1brown.png" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="线性代数的几何意义"/></a><div class="content"><a class="title" href="/2022/01/07/linear-geometry/" title="线性代数的几何意义">线性代数的几何意义</a><time datetime="2022-01-07T15:42:10.817Z" title="Created 2022-01-07 23:42:10">2022-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/04/hello-hexo/" title="Hello Hexo"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.zyiz.net%2Fupload%2F202002%2F18%2F202002182223498227.png&amp;refer=http%3A%2F%2Fwww.zyiz.net&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1644041194&amp;t=9bf8dc73d5ac3524f2207f98f1a07d4c" onerror="this.onerror=null;this.src='https://w.wallhaven.cc/full/dg/wallhaven-dgolg3.jpg'" alt="Hello Hexo"/></a><div class="content"><a class="title" href="/2022/01/04/hello-hexo/" title="Hello Hexo">Hello Hexo</a><time datetime="2022-01-04T12:13:15.441Z" title="Created 2022-01-04 20:13:15">2022-01-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2017/03/19/Normal-Balance-Tree/" title="普通平衡树">普通平衡树</a><time datetime="2017-03-19T05:30:02.000Z" title="Created 2017-03-19 13:30:02">2017-03-19</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2022 By Tong Su</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="Increase font size"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="Decrease font size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: 'c86c0c2c60193795d900',
+      clientSecret: '6552e1c998222295ccbca48579955b64479d7938',
+      repo: 'Blog-Comments',
+      owner: 'stcodeer',
+      admin: ['stcodeer'],
+      id: '1f042f2d8eda748dcc12b8b59e4dd78a',
+      language: 'en',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
