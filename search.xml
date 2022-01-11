@@ -8,7 +8,7 @@
       <link href="/2022/01/09/Markdown-Mathjax/"/>
       <url>/2022/01/09/Markdown-Mathjax/</url>
       
-        <content type="html"><![CDATA[<p>关于Markdown与Mathjax的冲突以及解决方案。</p><p>为了进一步解决冲突问题，详见<a href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Mathjax的配置方法</a>。</p><h1 id="冲突1"><a href="#冲突1" class="headerlink" title="冲突1"></a>冲突1</h1><p>有些特殊符号在Markdown与Mathjax中存在表达冲突的问题，如星号（*）在Markdown中可以表示斜体或加粗，在Mathjax中可以表示乘法。</p><p>为了解决冲突，可以在Mathjax中使用Markdown中的转义符（\）。</p><p>例如：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$a \* b$</span><br></pre></td></tr></table></figure><p>将会输出为：</p><p>$a * b$</p><p>这种解决方法会导致Latex的语法发生变化，需要注意。</p><h1 id="冲突2"><a href="#冲突2" class="headerlink" title="冲突2"></a>冲突2</h1><p>为了输出大括号，不能在Mathjax中使用如下语法，此处方案会导致大括号不显示。</p><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\&#123; A \&#125;$</span><br></pre></td></tr></table></figure><p>而应使用：</p><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\lbrace A \rbrace$</span><br></pre></td></tr></table></figure><p>效果如下：</p><p>$\lbrace A \rbrace$</p><h1 id="冲突3"><a href="#冲突3" class="headerlink" title="冲突3"></a>冲突3</h1><p>由于’&#39;会被认作Markdown中的转义符号，因此在Mathjax中无法通过’%‘或者’&#39;的方式输出百分号或空格，目前没有很好的解决方案。</p>]]></content>
+        <content type="html"><![CDATA[<p>关于Markdown与Mathjax的冲突以及解决方案。</p><p>为了进一步解决冲突问题，详见<a href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Mathjax的配置方法</a>。</p><h1 id="冲突1"><a href="#冲突1" class="headerlink" title="冲突1"></a>冲突1</h1><p>有些特殊符号在Markdown与Mathjax中存在表达冲突的问题，如星号（*）在Markdown中可以表示斜体或加粗，在Mathjax中可以表示乘法。</p><p>为了解决冲突，可以在Mathjax中使用Markdown中的转义符（\）。</p><p>例如：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$a \* b$</span><br></pre></td></tr></table></figure><p>将会输出为：</p><p>$a * b$</p><p>这种解决方法会导致Latex的语法发生变化，需要注意。</p><h1 id="冲突2"><a href="#冲突2" class="headerlink" title="冲突2"></a>冲突2</h1><p>为了输出大括号，不能在Mathjax中使用如下语法，此处方案会导致大括号不显示。</p><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\&#123; A \&#125;$</span><br></pre></td></tr></table></figure><p>而应使用：</p><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$\lbrace A \rbrace$</span><br></pre></td></tr></table></figure><p>效果如下：</p><p>$\lbrace A \rbrace$</p><h1 id="冲突3"><a href="#冲突3" class="headerlink" title="冲突3"></a>冲突3</h1><p>由于’\‘会被认作Markdown中的转义符号，因此在Mathjax中无法通过’\%’或者’\‘的方式输出百分号或空格，目前没有很好的解决方案。</p>]]></content>
       
       
       <categories>
@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -130,9 +130,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Balance Tree </tag>
             
@@ -159,9 +159,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Balance Tree </tag>
             
@@ -188,13 +188,13 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
-            <tag> String Manipulation </tag>
-            
             <tag> C/C++ </tag>
             
             <tag> AC Automaton </tag>
+            
+            <tag> String Manipulation </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Matrix </tag>
             
@@ -221,13 +221,13 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
-            <tag> String Manipulation </tag>
-            
             <tag> C/C++ </tag>
             
             <tag> AC Automaton </tag>
+            
+            <tag> String Manipulation </tag>
+            
+            <tag> Chinese </tag>
             
         </tags>
       
@@ -252,9 +252,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Dynamic Programming </tag>
             
@@ -289,9 +289,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Dynamic Programming </tag>
             
@@ -320,9 +320,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Binary Search </tag>
             
@@ -353,9 +353,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Dynamic Programming </tag>
             
@@ -413,9 +413,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Dynamic Programming </tag>
             
@@ -444,11 +444,11 @@
       
         <tags>
             
-            <tag> Chinese </tag>
+            <tag> C/C++ </tag>
             
             <tag> String Manipulation </tag>
             
-            <tag> C/C++ </tag>
+            <tag> Chinese </tag>
             
             <tag> Suffix Array </tag>
             
@@ -475,9 +475,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Coding Style </tag>
             
