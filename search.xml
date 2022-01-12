@@ -114,6 +114,41 @@
     
     
     <entry>
+      <title>2017年5月 题目总结</title>
+      <link href="/2017/05/02/Problems-2017-05/"/>
+      <url>/2017/05/02/Problems-2017-05/</url>
+      
+        <content type="html"><![CDATA[<div class="note info modern"><p>本文移植自个人的原博客（<a href="http://deprecated.tong-su.com/2017/05/02/2017%E5%B9%B45%E6%9C%88%20%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">原文</a>）</p></div><h1 id="BZOJ1023-SHOI2008-cactus仙人掌图"><a href="#BZOJ1023-SHOI2008-cactus仙人掌图" class="headerlink" title="BZOJ1023 SHOI2008 cactus仙人掌图"></a>BZOJ1023 SHOI2008 cactus仙人掌图</h1><p>题意为求仙人掌图的直径。这题看起来完全没思路，最后看的题解。get了一种Tarjan的用法，先用其求出DFS树，用dp更新树边的直径最大值，考虑将其他非树边以环形dp更新，由于边的权值均为$1$，所以可以进行单调队列优化。其中利用到了仙人掌的一些性质。</p><h1 id="BZOJ1024-SCOI2009-生日快乐"><a href="#BZOJ1024-SCOI2009-生日快乐" class="headerlink" title="BZOJ1024 SCOI2009 生日快乐"></a>BZOJ1024 SCOI2009 生日快乐</h1><p>搜索，考虑切成$n$块后面积是一样的，那么实际上对于每一个切割后的蛋糕，需要继续处理的操作数的一定的，深搜即可。核心代码如下：</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">work</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> y,<span class="keyword">int</span> k)</span><span class="comment">//x，y为长与宽，k为对于该块蛋糕剩余操作个数。</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k==<span class="number">1</span>)<span class="keyword">return</span> <span class="built_in">max</span>(x,y)/<span class="built_in">min</span>(x,y);</span><br><span class="line">    <span class="keyword">double</span> ans=inf;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;k;++i)</span><br><span class="line">    ans=<span class="built_in">min</span>(ans,<span class="built_in">max</span>(<span class="built_in">work</span>(x,y/k*i,i),<span class="built_in">work</span>(x,y/k*(k-i),k-i)));</span><br><span class="line">    <span class="comment">//取min是因为答案要求最小值，取max是因为属于同一块蛋糕。</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;k;++i)</span><br><span class="line">    ans=<span class="built_in">min</span>(ans,<span class="built_in">max</span>(<span class="built_in">work</span>(x/k*i,y,i),<span class="built_in">work</span>(x/k*(k-i),y,k-i)));</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="BZOJ1025-SCOI2009-游戏"><a href="#BZOJ1025-SCOI2009-游戏" class="headerlink" title="BZOJ1025 SCOI2009 游戏"></a>BZOJ1025 SCOI2009 游戏</h1><p>题意为给定$n$个元素，求在$n$的全排列的置换中的周期（即为各个循环节的公倍数），等价于$n$的整数拆分中的最小公倍数数量，直接枚举显然会超时，不妨用dp处理，枚举质因子以及幂即可。</p><h1 id="BZOJ1026-SCOI2009-windy数"><a href="#BZOJ1026-SCOI2009-windy数" class="headerlink" title="BZOJ1026 SCOI2009 windy数"></a>BZOJ1026 SCOI2009 windy数</h1><p>数位DP（一般是求在$[L,R]$之间有多少满足条件的数，然而并没有学过，膜的题解），先预处理有$k$位时，最高位为$i$时的答案，通过交集，并集的关系求一下即可。</p><h1 id="BZOJ1027-JSOI2007-合金"><a href="#BZOJ1027-JSOI2007-合金" class="headerlink" title="BZOJ1027 JSOI2007 合金"></a>BZOJ1027 JSOI2007 合金</h1><p>构造题，已知$a+b+c=1$，可将第三维浓度去掉，那么目标浓度可由条件浓度转化而来，当且仅当</p><p>$$min(a_{condition}) &lt; a_{target} &lt; max(a_{condition})$$</p><p>$$min(b_{condition}) &lt; b_{target} &lt; max(b_{condition})$$</p><p>那么可以将其转化为二维平面的凸包问题，给定可选点，要求用最少的点使其凸包包含所有目标点。</p><h1 id="BZOJ1028-JSOI2007-麻将"><a href="#BZOJ1028-JSOI2007-麻将" class="headerlink" title="BZOJ1028 JSOI2007 麻将"></a>BZOJ1028 JSOI2007 麻将</h1><p>观察$n,m$的范围，可知贪心就能过。</p><h1 id="BZOJ1029-JSOI2007-建筑抢修"><a href="#BZOJ1029-JSOI2007-建筑抢修" class="headerlink" title="BZOJ1029 JSOI2007 建筑抢修"></a>BZOJ1029 JSOI2007 建筑抢修</h1><p>还是贪心，涨自信题。</p><h1 id="BZOJ1030-JSOI2007-文本生成器"><a href="#BZOJ1030-JSOI2007-文本生成器" class="headerlink" title="BZOJ1030 JSOI2007 文本生成器"></a>BZOJ1030 JSOI2007 文本生成器</h1><p>AC自动机模板题，见博客DNA Sequence，不过这题$m$范围很小，而子串的长度更大，所以不需要矩阵快速幂（会TLE），直接DP即可。</p><h1 id="BZOJ1031-JSOI2007-字符加密"><a href="#BZOJ1031-JSOI2007-字符加密" class="headerlink" title="BZOJ1031 JSOI2007 字符加密"></a>BZOJ1031 JSOI2007 字符加密</h1><p>后缀数组模板题，利用后缀的性质将条件串接到自己后面，这样就包换了所有情况，求sa即可。</p><h1 id="BZOJ1032-JSOI2007-祖码"><a href="#BZOJ1032-JSOI2007-祖码" class="headerlink" title="BZOJ1032 JSOI2007 祖码"></a>BZOJ1032 JSOI2007 祖码</h1><p>区间DP，标程没有考虑到连续消除的问题，导致数据都错了。</p><h1 id="BZOJ1034-ZJOI2008-泡泡堂"><a href="#BZOJ1034-ZJOI2008-泡泡堂" class="headerlink" title="BZOJ1034 ZJOI2008 泡泡堂"></a>BZOJ1034 ZJOI2008 泡泡堂</h1><p>贪心，对于最好情况，先将对手实力值与ZJ实力值排序，如果ZJ最低的实力值比对手最低的实力值大，那么为了战胜对手，将两者比试的代价最小，如果ZJ最高的实力值比对手最高的实力值大时，那么为了战胜对手，此时只要ZJ取一个比对手该实力值高的元素即可，为了方便，可以取最后一个。当两者均不满足时，则与对手实力值最高的元素比试总不能获胜，为了代价最小，将ZJ实力值最小的元素与其进行比试。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> OI / ACM (Algo. Competition) </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
+            
+            <tag> Dynamic Programming </tag>
+            
+            <tag> Computation Geometry </tag>
+            
+            <tag> Graph Theory </tag>
+            
+            <tag> Tarjan&#39;s Algorithm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SDOI2017 数字表格</title>
       <link href="/2017/04/27/SDOI2017-Numbers/"/>
       <url>/2017/04/27/SDOI2017-Numbers/</url>
