@@ -114,6 +114,55 @@
     
     
     <entry>
+      <title>2017年4月 题目总结</title>
+      <link href="/2017/04/25/Problems-2017-04/"/>
+      <url>/2017/04/25/Problems-2017-04/</url>
+      
+        <content type="html"><![CDATA[<div class="note info modern"><p>本文移植自个人的原博客（<a href="http://deprecated.tong-su.com/2017/04/25/2017%E5%B9%B44%E6%9C%88%20%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">原文</a>）</p></div><h1 id="BZOJ1001-BeiJing2006-狼抓兔子"><a href="#BZOJ1001-BeiJing2006-狼抓兔子" class="headerlink" title="BZOJ1001 BeiJing2006 狼抓兔子"></a>BZOJ1001 BeiJing2006 狼抓兔子</h1><p>网络流裸题，考虑到边为双向边，建图时应同样将反向边赋值。同时也应加上反向弧优化（当流量为零时直接将点标记为不可达到即可）</p><h1 id="BZOJ1002-FJOI2007-轮状病毒"><a href="#BZOJ1002-FJOI2007-轮状病毒" class="headerlink" title="BZOJ1002 FJOI2007 轮状病毒"></a>BZOJ1002 FJOI2007 轮状病毒</h1><p>最简单的方法是打表找规律，进阶一点是动态规划。其实这题跟基尔霍夫矩阵有关，然而还是找规律。（要加上高精度）</p><h1 id="BZOJ1003-ZJOI2006-物流运输"><a href="#BZOJ1003-ZJOI2006-物流运输" class="headerlink" title="BZOJ1003 ZJOI2006 物流运输"></a>BZOJ1003 ZJOI2006 物流运输</h1><p>一道DP题，转移方程为</p><p>$$f[i]=min(f[i],f[j]+k+t[j+1][i] * (i−j))$$</p><h1 id="BZOJ1004-HNOI2008-Cards"><a href="#BZOJ1004-HNOI2008-Cards" class="headerlink" title="BZOJ1004 HNOI2008 Cards"></a>BZOJ1004 HNOI2008 Cards</h1><p>Burnside引理裸题，题目中给定的限制满足将洗牌看作置换的条件。只要递推加DP求出每种置换下不变方案数即可。考虑到当两张牌在该置换下属于同一循环节时，不变方案要求两者颜色相同，做一下三维背包即可。</p><h1 id="BZOJ1005-HNOI2008-明明的烦恼"><a href="#BZOJ1005-HNOI2008-明明的烦恼" class="headerlink" title="BZOJ1005 HNOI2008 明明的烦恼"></a>BZOJ1005 HNOI2008 明明的烦恼</h1><p>purfer序列裸题，根据确定purfer序列的规则将度数的限制转化为在序列中的限制，求排列总数即可，对于分母需要求逆元，可以上高精度也可以分解质因数。</p><h1 id="BZOJ1006-HNOI2008-神奇的国度"><a href="#BZOJ1006-HNOI2008-神奇的国度" class="headerlink" title="BZOJ1006 HNOI2008 神奇的国度"></a>BZOJ1006 HNOI2008 神奇的国度</h1><p>弦图裸题,见上篇博客。</p><h1 id="BZOJ1007-HNOI2008-水平可见直线"><a href="#BZOJ1007-HNOI2008-水平可见直线" class="headerlink" title="BZOJ1007 HNOI2008 水平可见直线"></a>BZOJ1007 HNOI2008 水平可见直线</h1><p>以斜率维护双端队列，当两端元素被覆盖时出队，在将当前直线加入队列，最后剩下的即为答案。</p><h1 id="BZOJ1008-HNOI2008-越狱"><a href="#BZOJ1008-HNOI2008-越狱" class="headerlink" title="BZOJ1008 HNOI2008 越狱"></a>BZOJ1008 HNOI2008 越狱</h1><p>简单的快速幂，稍微推一下即可得到答案为</p><p>$$qpow(m,n)−(qpow(m−1,n−1)∗m)$$</p><h1 id="BZOJ1009-HNOI2008-GT考试"><a href="#BZOJ1009-HNOI2008-GT考试" class="headerlink" title="BZOJ1009 HNOI2008 GT考试"></a>BZOJ1009 HNOI2008 GT考试</h1><p>用KMP和AC自动机皆可，KMP需要DP一下，AC自动机上模板就行。</p><h1 id="BZOJ1011-HNOI2008-遥远的行星"><a href="#BZOJ1011-HNOI2008-遥远的行星" class="headerlink" title="BZOJ1011 HNOI2008 遥远的行星"></a>BZOJ1011 HNOI2008 遥远的行星</h1><p>简单的递推，考虑到题目中所说的限制和误差的条件，不妨在$j$大于一个限制时，将求$j$的受力公式化中的分母化为近似的$(A*j)/2j$即可。</p><h1 id="BZOJ1012-JSOI2008-最大数"><a href="#BZOJ1012-JSOI2008-最大数" class="headerlink" title="BZOJ1012 JSOI2008 最大数"></a>BZOJ1012 JSOI2008 最大数</h1><p>各种数据结构的裸题。</p><h1 id="BZOJ1013-JSOI2008-球形空间产生器"><a href="#BZOJ1013-JSOI2008-球形空间产生器" class="headerlink" title="BZOJ1013 JSOI2008 球形空间产生器"></a>BZOJ1013 JSOI2008 球形空间产生器</h1><p>高斯消元，提示中给出了两点间坐标公式，可以将每个给定的点与圆心坐标通过公式建立联系，再消掉公式右项中的半径，即可套用高斯消元算法。</p><h1 id="BZOJ4801-BZOJ4月月赛-打牌"><a href="#BZOJ4801-BZOJ4月月赛-打牌" class="headerlink" title="BZOJ4801 BZOJ4月月赛 打牌"></a>BZOJ4801 BZOJ4月月赛 打牌</h1><p>考验基础的编程能力，每一轮的优先权是解题的关键，不妨将两人有牌权值相同时特殊处理一下，注意思路要清晰，最后注意下$A$的权值与价值不同，优先出牌的人可能故意输掉一局使得分尽可能大。</p><h1 id="BZOJ4810-YNOI2017-由乃的玉米田"><a href="#BZOJ4810-YNOI2017-由乃的玉米田" class="headerlink" title="BZOJ4810 YNOI2017 由乃的玉米田"></a>BZOJ4810 YNOI2017 由乃的玉米田</h1><p>主要考察bitset的运用，但直接套用会明显会超时，需要莫队算法优化时间复杂度。</p><h1 id="Luogu3708-洛谷四月月赛-koishi的数学题"><a href="#Luogu3708-洛谷四月月赛-koishi的数学题" class="headerlink" title="Luogu3708 洛谷四月月赛 koishi的数学题"></a>Luogu3708 洛谷四月月赛 koishi的数学题</h1><p>设$g(x,i)=g(modi)$，则可以先打表算出$g(1,1)$到$g(n,n)$的值。观察矩阵可知，考虑$f(x−1)$对$f(x)$的贡献，可知两者的区别主要的不同取决于因子的不同，预处理一下即可。</p><h1 id="BZOJ1015-JSOI2008-星球大战"><a href="#BZOJ1015-JSOI2008-星球大战" class="headerlink" title="BZOJ1015 JSOI2008 星球大战"></a>BZOJ1015 JSOI2008 星球大战</h1><p>考察并查集的应用，由于问题可以离线，可以将操作逆处理，将问题转变为熟悉的集合合并问题，再注意一下剪枝即可。</p><h1 id="BZOJ1018-SHOI2008-堵塞的交通"><a href="#BZOJ1018-SHOI2008-堵塞的交通" class="headerlink" title="BZOJ1018 SHOI2008 堵塞的交通"></a>BZOJ1018 SHOI2008 堵塞的交通</h1><p>分块+并查集，思想很简单(分块优化的暴力)，第一次实现这种数据结构，调了好久。正解是线段树维护每一列自身以及与相邻两列的连通性。考虑两点之间可能的联通方式，枚举所有可能的情况，完成所有操作。（比暴力还难写）</p><h1 id="BZOJ1019-SHOI2008汉诺塔"><a href="#BZOJ1019-SHOI2008汉诺塔" class="headerlink" title="BZOJ1019 SHOI2008汉诺塔"></a>BZOJ1019 SHOI2008汉诺塔</h1><p>第一眼看题先打表找了个规律，可知，$f[i]$（当前优先级下有$i$层时的答案）与$f[i−1]$线性相关，于是模拟出来前$20$项，递推出后十项。（正解为DP，严格遵循题目所给的要求（汉诺塔问题均有$f[i]=f[i−1]∗k+b$的递推式））</p><h1 id="BZOJ1020-SHOI2008-安全的航线"><a href="#BZOJ1020-SHOI2008-安全的航线" class="headerlink" title="BZOJ1020 SHOI2008 安全的航线"></a>BZOJ1020 SHOI2008 安全的航线</h1><p>典型的计算几何，可以二分可以迭代，具体按照莫涛的论文《迭代思想的应用》实现，但是还是TLE了。后来看题解get了求垂足的姿势，复习了一下求点与多边形包含关系的方法。（mark一下，复习时再敲一遍）</p><h1 id="BZOJ1021-SHOI2008-循环的债务"><a href="#BZOJ1021-SHOI2008-循环的债务" class="headerlink" title="BZOJ1021 SHOI2008 循环的债务"></a>BZOJ1021 SHOI2008 循环的债务</h1><p>题目可以进一步简化，即已知每个人初始金钱和构成。</p><h1 id="Luogu3704-SDOI2017-数字表格"><a href="#Luogu3704-SDOI2017-数字表格" class="headerlink" title="Luogu3704 SDOI2017 数字表格"></a>Luogu3704 SDOI2017 数字表格</h1><p>莫比乌斯反演的常见应用，见下篇博客。</p><h1 id="BZOJ1049-HAOI2006-数字序列"><a href="#BZOJ1049-HAOI2006-数字序列" class="headerlink" title="BZOJ1049 HAOI2006 数字序列"></a>BZOJ1049 HAOI2006 数字序列</h1><p>很像暴力的动规，对于第一问，需要用到补集转化的思想，设 $f[i]$ 为前 $i$ 位的最多不变 元素，那么 $f[i]$ 能由 $f[j]$ 转化而来当且仅当 $a[i]-a[j]&gt;=i-j$, 即修改两者之间的 $i-j-1$ 个数使其严格递增，即两者之间只有$1$个元素不变，那么有</p><p>$$f[i]=\max (f[i], f[j]+1)(a[i]-a[j]&gt;=i-j)$$</p><p>时间复杂度为 $O\left(n^{2}\right)$, 无法通过全部数据点，考虑进行优化，观察状态转移方程，易知可以通过减标号的方法转化成LIS问题，即 可在 $O(n \log n)$ 的时间内求解。</p><p>对于第二问，为了简化问题，可以先设 $w(i, j)$ 为将从 $i$ 到 $j$ 的所有元素进行修改的最小代价，设 $g[i]$ 为前 $i$ 位的最小答案。那么根据第一问有</p><p>$$g[i]=\min (g[i], g[j]+w(j+1, i))(f[i]=f[j]+1)$$</p><p>对于 $w$ 的求解，可以记录每一个需要修改的元素的下一个和上一个不需要修改元素的位置，模拟即可。</p><h1 id="Codefores286E-Ladies’-Shop"><a href="#Codefores286E-Ladies’-Shop" class="headerlink" title="Codefores286E Ladies’ Shop"></a>Codefores286E Ladies’ Shop</h1><p>根据题目所给条件，可知要求的 $p$ 个数一定在给定的 $n$ 个数中。</p><p>那么可以根据多项式乘法系数相乘，指数相加的特点，构造生成函数，并求出这 $n$ 个数可以组成的所有情况。已知某个 $n$ 集合中数 $a$ 可以由 $b+c+d$ 生成，那么根据题目中所给条件，可知一定有 $e$ 由 $c+d$ 生成，那么可以将 $a$ 看作由 $b+e$ 生成。</p><p>根据数学归纳法，易证</p><p>$p$ 个数可以选出一些集合（相同的数可重复选），其和可以组成所有给定的 $n$ 个数。（一）</p><p>与以下结论等价:</p><p>$p$ 个数可以选出任何两个元素（相同的数可重复选），其和可以组成所有给定的 $n$ 个数。（二）</p><p>那么生成函数的构造就显而易见了。（将幂作为权值，系数作为出现的次数，并将该生成函数与自身相乘，可以通过FFT优化)</p><p>对于第三个条件 (满足 $|p|$ 的阶最小)，可以结合以贪心的策略。如果生成函数中某项系数大于$1$且在给定集合 $|n|$ 中，则该元素一定可以由另外两个元素组成，那么就不将其加入集合 $|p|$ 中，否则将其加入集合 $|p|$ 中。</p><p>至于无解的判断，易知其等价于:</p><p>生成函数中某项系数不为零且该元素不在给定集合中。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> OI / ACM (Algo. Competition) </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> Chinese </tag>
+            
+            <tag> AC Automaton </tag>
+            
+            <tag> String Manipulation </tag>
+            
+            <tag> Dynamic Programming </tag>
+            
+            <tag> Polya Theorem </tag>
+            
+            <tag> Balance Tree </tag>
+            
+            <tag> Computation Geometry </tag>
+            
+            <tag> Graph Theory </tag>
+            
+            <tag> Gaussian Elimination </tag>
+            
+            <tag> Network Flow </tag>
+            
+            <tag> Hash </tag>
+            
+            <tag> Mo&#39;s Algorithm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>弦图与区间图</title>
       <link href="/2017/04/21/Chordal-Graph/"/>
       <url>/2017/04/21/Chordal-Graph/</url>
