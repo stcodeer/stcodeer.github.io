@@ -4,13 +4,54 @@
   
     
     <entry>
-      <title>7月10日，无事发生</title>
-      <link href="/2022/07/10/2022-07-10/"/>
-      <url>/2022/07/10/2022-07-10/</url>
+      <title>WSL 2 常用命令</title>
+      <link href="/2022/08/01/WSL2-Useage/"/>
+      <url>/2022/08/01/WSL2-Useage/</url>
       
-        <content type="html"><![CDATA[<p>如题</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="查看所有-WSL-分发的状态和版本"><a href="#查看所有-WSL-分发的状态和版本" class="headerlink" title="查看所有 WSL 分发的状态和版本"></a>查看所有 WSL 分发的状态和版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl -l -v</span><br></pre></td></tr></table></figure><h3 id="运行指定分发"><a href="#运行指定分发" class="headerlink" title="运行指定分发"></a>运行指定分发</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl -d &lt;分发&gt;</span><br></pre></td></tr></table></figure><h3 id="终止指定分发"><a href="#终止指定分发" class="headerlink" title="终止指定分发"></a>终止指定分发</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl -t &lt;分发&gt;</span><br></pre></td></tr></table></figure><h3 id="终止所有分发"><a href="#终止所有分发" class="headerlink" title="终止所有分发"></a>终止所有分发</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure><h3 id="注销指定分发并删除根文件系统"><a href="#注销指定分发并删除根文件系统" class="headerlink" title="注销指定分发并删除根文件系统"></a>注销指定分发并删除根文件系统</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --unregister &lt;分发&gt;</span><br></pre></td></tr></table></figure><h3 id="将指定的-tar-文件作为新分发导入"><a href="#将指定的-tar-文件作为新分发导入" class="headerlink" title="将指定的 tar 文件作为新分发导入"></a>将指定的 tar 文件作为新分发导入</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --import &lt;Distro&gt; &lt;InstallLocation&gt; &lt;FileName&gt;</span><br></pre></td></tr></table></figure><h3 id="将分发导出到-tar-文件"><a href="#将分发导出到-tar-文件" class="headerlink" title="将分发导出到 tar 文件"></a>将分发导出到 tar 文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wsl --<span class="built_in">export</span> &lt;Distro[分发]&gt; &lt;FileName[文件名，包含文件全路径]&gt;</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> Environment </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> WSL 2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WSL 2 下配置深度学习环境</title>
+      <link href="/2022/08/01/WSL2-Deep-Learning/"/>
+      <url>/2022/08/01/WSL2-Deep-Learning/</url>
+      
+        <content type="html"><![CDATA[<h2 id="为什么用-WSL-2-？"><a href="#为什么用-WSL-2-？" class="headerlink" title="为什么用 WSL 2 ？"></a>为什么用 WSL 2 ？</h2><p>WSL 2 是一种在 Windows 中内置的 Linux 子系统，在深度学习上约有 20% 的性能损失。</p><p>相比直接使用 Linux 系统，WSL 2 可以方便的使用 Windows 下的软件。</p><p>相比直接使用 Windows 系统，WSL 2 实际是 Linux 环境，对深度学习有着更好的支持。</p><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>通过 <a href="https://docs.microsoft.com/zh-cn/windows/wsl/install">使用 WSL 在 Windows 上安装 Linux</a> 中的方式，完成 WSL 2 + Ubuntu 22.04 的安装和配置。</p><p>WSL 2 只需在 Windows 10 下安装显卡驱动，不需要在 Linux 子系统中额外安装显卡驱动。</p><p>通过 <a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#installing-nvidia-drivers">CUDA Support for WSL 2</a> 中的方式，完成 CUDAToolkit 11.6 的安装和配置。</p><p>通过 <a href="https://conda.io/en/latest/miniconda.html">Miniconda 3 安装</a> 中的方式，完成 Miniconda 3 的安装和配置。</p><p>通过 <a href="https://developer.nvidia.cn/zh-cn/cudnn">NVIDIA CUDA® 深度神经网络库 (cuDNN) </a> 中的方式，完成 cuDNN 8.4.1 的安装和配置。</p><p>通过<a href="https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-vscode">开始通过适用于 Linux 的 Windows 子系统使用 Visual Studio Code</a>中的方式，以 ssh remote 的方式，远程连接到 Linux 系统中，在 Windows 10 下编写代码，在 Linux 环境中运行。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Environment </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> WSL 2 </tag>
+            
+        </tags>
       
     </entry>
     
