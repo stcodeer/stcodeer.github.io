@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>动手学深度学习笔记 5-多层感知机</title>
+      <link href="/2022/08/04/d2l-5/"/>
+      <url>/2022/08/04/d2l-5/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/08/04/vG8DkhjKWwenVYr.png" alt="5-感知机.png"></p><p><img src="https://s2.loli.net/2022/08/04/QVbAWsehZUHT6jc.png" alt="5-感知机-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/T23hbkE6yolRNJj.png" alt="5-感知机-2.png"></p><p><img src="https://s2.loli.net/2022/08/04/hPm9Wz682QHTp3N.png" alt="5-感知机-3.png"></p><p><img src="https://s2.loli.net/2022/08/04/3c5lzkvjMOVeFNG.png" alt="5-感知机-4.png"></p><p><img src="https://s2.loli.net/2022/08/04/wRep6V9WNrvhmgM.png" alt="5-感知机-5.png"></p><p><img src="https://s2.loli.net/2022/08/04/MNa1Jte8oqrh5pU.png" alt="5-感知机-6.png"></p><p><img src="https://s2.loli.net/2022/08/04/ARP81vzSjLcGegk.png" alt="5-感知机-7.png"></p><p><img src="https://s2.loli.net/2022/08/04/PErQnYbizBTgFAl.png" alt="5-感知机-8.png"></p><p><img src="https://s2.loli.net/2022/08/04/t8jlQIxa3X45UgB.png" alt="5-感知机-9.png"></p><p><img src="https://s2.loli.net/2022/08/04/GRAlBFdegO8xD3m.png" alt="5-感知机-10.png"></p><p><img src="https://s2.loli.net/2022/08/04/rhxkwIBOL8CQVF9.png" alt="5-感知机-11.png"></p><p>关于多层感知机的知识，还需要结合更深入的学习进一步理解。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动手学深度学习笔记 4-softmax回归</title>
+      <link href="/2022/08/04/d2l-4/"/>
+      <url>/2022/08/04/d2l-4/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动手学深度学习笔记 3-梯度下降</title>
+      <link href="/2022/08/03/d2l-3/"/>
+      <url>/2022/08/03/d2l-3/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/08/04/aBCA4ieqn1xrbN2.png" alt="3-梯度下降.png"></p><p><img src="https://s2.loli.net/2022/08/04/aTYW25r6ifmjn3d.png" alt="3-梯度下降-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/v7Dq286zkNEJxQe.png" alt="3-梯度下降-2.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>WSL 2 常用命令</title>
       <link href="/2022/08/01/WSL2-Useage/"/>
       <url>/2022/08/01/WSL2-Useage/</url>
@@ -35,7 +116,7 @@
       <link href="/2022/08/01/WSL2-Deep-Learning/"/>
       <url>/2022/08/01/WSL2-Deep-Learning/</url>
       
-        <content type="html"><![CDATA[<h2 id="为什么用-WSL-2-？"><a href="#为什么用-WSL-2-？" class="headerlink" title="为什么用 WSL 2 ？"></a>为什么用 WSL 2 ？</h2><p>WSL 2 是一种在 Windows 中内置的 Linux 子系统，在深度学习上约有 20% 的性能损失。</p><p>相比直接使用 Linux 系统，WSL 2 可以方便的使用 Windows 下的软件。</p><p>相比直接使用 Windows 系统，WSL 2 实际是 Linux 环境，对深度学习有着更好的支持。</p><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>通过 <a href="https://docs.microsoft.com/zh-cn/windows/wsl/install">使用 WSL 在 Windows 上安装 Linux</a> 中的方式，完成 WSL 2 + Ubuntu 22.04 的安装和配置。</p><p>WSL 2 只需在 Windows 10 下安装显卡驱动，不需要在 Linux 子系统中额外安装显卡驱动。</p><p>通过 <a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#installing-nvidia-drivers">CUDA Support for WSL 2</a> 中的方式，完成 CUDAToolkit 11.6 的安装和配置。</p><p>通过 <a href="https://conda.io/en/latest/miniconda.html">Miniconda 3 安装</a> 中的方式，完成 Miniconda 3 的安装和配置。</p><p>通过 <a href="https://developer.nvidia.cn/zh-cn/cudnn">NVIDIA CUDA® 深度神经网络库 (cuDNN) </a> 中的方式，完成 cuDNN 8.4.1 的安装和配置。</p><p>通过<a href="https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-vscode">开始通过适用于 Linux 的 Windows 子系统使用 Visual Studio Code</a>中的方式，以 ssh remote 的方式，远程连接到 Linux 系统中，在 Windows 10 下编写代码，在 Linux 环境中运行。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="为什么用-WSL-2-？"><a href="#为什么用-WSL-2-？" class="headerlink" title="为什么用 WSL 2 ？"></a>为什么用 WSL 2 ？</h2><p>WSL 2 是一种在 Windows 中内置的 Linux 子系统，在深度学习上约有 20% 的性能损失。</p><p>相比直接使用 Linux 系统，WSL 2 可以方便的使用 Windows 下的软件。</p><p>相比直接使用 Windows 系统，WSL 2 实际是 Linux 环境，对深度学习有着更好的支持。</p><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>通过 <a href="https://docs.microsoft.com/zh-cn/windows/wsl/install">使用 WSL 在 Windows 上安装 Linux</a> 中的方式，完成 WSL 2 + Ubuntu 22.04 的安装和配置。</p><p>WSL 2 只需在 Windows 10 下安装显卡驱动，不需要在 Linux 子系统中额外安装显卡驱动。</p><p>通过 <a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#installing-nvidia-drivers">CUDA Support for WSL 2</a> 中的方式，完成 CUDAToolkit 11.6 的安装和配置。</p><p>通过 <a href="https://conda.io/en/latest/miniconda.html">Miniconda 3 安装</a> 中的方式，完成 Miniconda 3 的安装和配置。</p><p>通过 <a href="https://developer.nvidia.cn/zh-cn/cudnn">NVIDIA CUDA® 深度神经网络库 (cuDNN) </a> 中的方式，完成 cuDNN 8.4.1 的安装和配置。</p><p>通过<a href="https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-vscode">开始通过适用于 Linux 的 Windows 子系统使用 Visual Studio Code</a>中的方式，以 ssh remote 的方式，远程连接到 Linux 系统中，在 Windows 10 下编写代码，在 Linux 环境中运行。</p><h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2><p>由于本文通过 ssh remote 的方式远程连接到 Linux 子系统中，无法显示 Linux 子系统中运行的图形界面（如 matplotlib，gedit等），因此可以通过 VcXsrv + Remote X11 in VSCode 的方式同样将图形界面远程连接到 Windows 下，详情见<a href="https://www.jianshu.com/p/d9482de4ab6e">WSL中使用pyplot作图</a>。</p>]]></content>
       
       
       <categories>
@@ -50,6 +131,60 @@
             <tag> Chinese </tag>
             
             <tag> WSL 2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动手学深度学习笔记 2-自动求导</title>
+      <link href="/2022/07/25/d2l-2/"/>
+      <url>/2022/07/25/d2l-2/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/08/04/sbkA19KlMdnOGv5.png" alt="2-自动求导.png"></p><p><img src="https://s2.loli.net/2022/08/04/1dFCfbnt8UA3LiQ.png" alt="2-自动求导-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/kFMVJtHoz4UbKPp.png" alt="2-自动求导-2.png"></p><p><img src="https://s2.loli.net/2022/08/04/bFxYpoIW4Vstged.png" alt="2-自动求导-3.png"></p><p><img src="https://s2.loli.net/2022/08/04/YuMGnU8mS1jsrgQ.png" alt="2-自动求导-4.png"></p><p><img src="https://s2.loli.net/2022/08/04/d9ucS8oQ7fmjwyJ.png" alt="2-自动求导-5.png"></p><h3 id="反向传播相比正向传播的优势"><a href="#反向传播相比正向传播的优势" class="headerlink" title="反向传播相比正向传播的优势"></a>反向传播相比正向传播的优势</h3><ol><li><p>自带剪枝。</p></li><li><p>对所有变量求偏导可以在一次传播过程中完成。</p></li></ol><h3 id="反向传播相比正向传播的劣势"><a href="#反向传播相比正向传播的劣势" class="headerlink" title="反向传播相比正向传播的劣势"></a>反向传播相比正向传播的劣势</h3><ol><li>空间复杂度为$O(n)$，每个没有被剪枝的节点都需要同时存储在内存中。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动手学深度学习笔记 1-矩阵求导</title>
+      <link href="/2022/07/23/d2l-1/"/>
+      <url>/2022/07/23/d2l-1/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/08/04/2T3v8wf57lZzHoU.png" alt="1-矩阵求导.png"></p><p><img src="https://s2.loli.net/2022/08/04/WYEPlTUzCZd9SGk.png" alt="1-矩阵求导-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/kHB6UhNdvMYmAqX.png" alt="1-矩阵求导-2.png"></p><p><img src="https://s2.loli.net/2022/08/04/9ZkYIe1maxTi5s4.png" alt="1-矩阵求导-3.png"></p><p>关于矩阵求导的详细技巧，可见<a href="https://zhuanlan.zhihu.com/p/24709748">矩阵求导术</a>一文。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
             
         </tags>
       
