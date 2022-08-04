@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>动手学深度学习笔记 7-深度学习硬件CPU与GPU</title>
+      <link href="/2022/08/05/d2l-7/"/>
+      <url>/2022/08/05/d2l-7/</url>
+      
+        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/05/nKZf3OogqCs4M6x.png" alt="7-深度学习硬件CPU与GPU.png"></p><p><img src="https://s2.loli.net/2022/08/05/odpVEwLQX6A2b4g.png" alt="7-深度学习硬件CPU与GPU-1.png"></p><p><img src="https://s2.loli.net/2022/08/05/wa2lFU7TnoKp1DG.png" alt="7-深度学习硬件CPU与GPU-2.png"></p><p><img src="https://s2.loli.net/2022/08/05/HYKBXbLPoy2R5gF.png" alt="7-深度学习硬件CPU与GPU-3.png"></p><p><img src="https://s2.loli.net/2022/08/05/HCWSjABP3RUy2V4.png" alt="7-深度学习硬件CPU与GPU-4.png"></p><p><img src="https://s2.loli.net/2022/08/05/iRaQ1jUw3ndMksF.png" alt="7-深度学习硬件CPU与GPU-5.png"></p><p><img src="https://s2.loli.net/2022/08/05/RS4xdEU7XZlqYcO.png" alt="7-深度学习硬件CPU与GPU-6.png"></p><p><img src="https://s2.loli.net/2022/08/05/r5ly9O7hUpmEzwJ.png" alt="7-深度学习硬件CPU与GPU-7.png"></p><p><img src="https://s2.loli.net/2022/08/05/vzOBZ4PRQUEwC3H.png" alt="7-深度学习硬件CPU与GPU-8.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>动手学深度学习笔记 6-损失函数</title>
       <link href="/2022/08/04/d2l-6/"/>
       <url>/2022/08/04/d2l-6/</url>
@@ -36,6 +63,33 @@
       <url>/2022/08/04/d2l-5/</url>
       
         <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/04/vG8DkhjKWwenVYr.png" alt="5-感知机.png"></p><p><img src="https://s2.loli.net/2022/08/04/QVbAWsehZUHT6jc.png" alt="5-感知机-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/T23hbkE6yolRNJj.png" alt="5-感知机-2.png"></p><p><img src="https://s2.loli.net/2022/08/04/hPm9Wz682QHTp3N.png" alt="5-感知机-3.png"></p><p><img src="https://s2.loli.net/2022/08/04/3c5lzkvjMOVeFNG.png" alt="5-感知机-4.png"></p><p><img src="https://s2.loli.net/2022/08/04/wRep6V9WNrvhmgM.png" alt="5-感知机-5.png"></p><p><img src="https://s2.loli.net/2022/08/04/MNa1Jte8oqrh5pU.png" alt="5-感知机-6.png"></p><p><img src="https://s2.loli.net/2022/08/04/ARP81vzSjLcGegk.png" alt="5-感知机-7.png"></p><p><img src="https://s2.loli.net/2022/08/04/PErQnYbizBTgFAl.png" alt="5-感知机-8.png"></p><p><img src="https://s2.loli.net/2022/08/04/t8jlQIxa3X45UgB.png" alt="5-感知机-9.png"></p><p><img src="https://s2.loli.net/2022/08/04/GRAlBFdegO8xD3m.png" alt="5-感知机-10.png"></p><p><img src="https://s2.loli.net/2022/08/04/rhxkwIBOL8CQVF9.png" alt="5-感知机-11.png"></p><p>关于多层感知机的知识，还需要结合更深入的学习进一步理解。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动手学深度学习笔记 8-使用GPU进行深度学习</title>
+      <link href="/2022/08/04/d2l-8/"/>
+      <url>/2022/08/04/d2l-8/</url>
+      
+        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/05/2HMljK7AhrxvVZz.png" alt="8-使用GPU进行深度学习.png"></p><p><img src="https://s2.loli.net/2022/08/05/hLbxDdBpa7lFoRP.png" alt="8-使用GPU进行深度学习-1.png"></p><p><img src="https://s2.loli.net/2022/08/05/6Ts2xS1ivnp5lkX.png" alt="8-使用GPU进行深度学习-2.png"></p><p><img src="https://s2.loli.net/2022/08/05/74lSFfGxELdymiU.png" alt="8-使用GPU进行深度学习-3.png"></p><p><img src="https://s2.loli.net/2022/08/05/G1WyO86TEYdRD9w.png" alt="8-使用GPU进行深度学习-4.png"></p><p><img src="https://s2.loli.net/2022/08/05/YxhzW2Ovnol1buF.png" alt="8-使用GPU进行深度学习-5.png"></p><p><img src="https://s2.loli.net/2022/08/05/GaYm1jtuy5H2IvU.png" alt="8-使用GPU进行深度学习-6.png"></p><p>这一章比较实用，所以截了一些代码的截图。</p><p>图中的方法不仅能用来加速深度学习，同样能显著提升运用 python 进行其他数据科学运算的速度。</p>]]></content>
       
       
       <categories>
@@ -121,7 +175,7 @@
       
       <categories>
           
-          <category> Environment </category>
+          <category> Coding Itself </category>
           
       </categories>
       
@@ -148,7 +202,7 @@
       
       <categories>
           
-          <category> Environment </category>
+          <category> Coding Itself </category>
           
       </categories>
       
@@ -330,6 +384,87 @@
     
     
     <entry>
+      <title>计算理论笔记 3-下推自动机的形式化定义</title>
+      <link href="/2020/05/20/Theory-of-Computation-3/"/>
+      <url>/2020/05/20/Theory-of-Computation-3/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/08/05/jwNy4x7dVcvatpg.png" alt="3-1.png"></p><p><img src="https://s2.loli.net/2022/08/05/WQj3opST5Xrxv9B.png" alt="3-2.png"></p><p><img src="https://s2.loli.net/2022/08/05/F8NhjHAIvVS1JXi.png" alt="3-3.png"></p><p><img src="https://s2.loli.net/2022/08/05/IcuLGPQnhRvwB7q.png" alt="3-4.png"></p><p><img src="https://s2.loli.net/2022/08/05/NSamLuI9OqEchBT.png" alt="3-5.png"></p><p><img src="https://s2.loli.net/2022/08/05/Qqwi31SC8Tnrbf7.png" alt="3-6.png"></p><p><img src="https://s2.loli.net/2022/08/05/EvfbBSCGug8oVqX.png" alt="3-7.png"></p><p><img src="https://s2.loli.net/2022/08/05/JWmLt9QBnSoVyui.png" alt="3-8.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Theory of Computation </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算理论笔记 2-非正则语言，乔姆斯基范式</title>
+      <link href="/2020/05/16/Theory-of-Computation-2/"/>
+      <url>/2020/05/16/Theory-of-Computation-2/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/08/05/mBxQle2zPFvSN3y.png" alt="2-1.png"></p><p><img src="https://s2.loli.net/2022/08/05/SDXBov2EwJbZdjR.png" alt="2-2.png"></p><p><img src="https://s2.loli.net/2022/08/05/ykaN7pqDIwiOXKe.png" alt="2-3.png"></p><p><img src="https://s2.loli.net/2022/08/05/CgBcxrukUL37oGd.png" alt="2-4.png"></p><p><img src="https://s2.loli.net/2022/08/05/9XUCu7GVbTQ3z1k.png" alt="2-5.png"></p><p><img src="https://s2.loli.net/2022/08/05/A5FUXRsjnCTVKgB.png" alt="2-6.png"></p><p><img src="https://s2.loli.net/2022/08/05/3ILcjORKmrZFP27.png" alt="2-7.png"></p><p><img src="https://s2.loli.net/2022/08/05/6VgrLQmd48h2Ewj.png" alt="2-8.png"></p><p><img src="https://s2.loli.net/2022/08/05/PVQ9mKHSX6Mwn71.png" alt="2-9.png"></p><p>因为0的个数和1的个数要保持一致，所以沿途要记录0的个数与1的个数的差，每个差值对应都要一个状态，而这个值可能是无限的，所以无法用有穷状态机表示。（D中01和10最多差1，所以是正则的）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Theory of Computation </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算理论笔记 1-DFA与NFA形式化定义，文法的歧义性</title>
+      <link href="/2020/05/15/Theory-of-Computation-1/"/>
+      <url>/2020/05/15/Theory-of-Computation-1/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/08/05/OegpHPKY2yJaIZ4.png" alt="1.png"></p><p><img src="https://s2.loli.net/2022/08/05/dCLgTx8Wnvlz7oE.png" alt="2.png"></p><p><img src="https://s2.loli.net/2022/08/05/GMdoNYTxnCQa5Iz.png" alt="3.png"></p><p><img src="https://s2.loli.net/2022/08/05/ibkyBhHeqm52YSZ.png" alt="4.png"></p><p><img src="https://s2.loli.net/2022/08/05/CVUmsOPNKZtJygL.png" alt="5.png"></p><p><img src="https://s2.loli.net/2022/08/05/NyauvhrCek8LVSf.png" alt="6.png"></p><p><img src="https://s2.loli.net/2022/08/05/gzbTJltL7pF1jiU.png" alt="7.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Theory of Computation </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>线性基四题</title>
       <link href="/2017/12/01/Linear-Basis-4problems/"/>
       <url>/2017/12/01/Linear-Basis-4problems/</url>
@@ -379,13 +514,13 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> AC Automaton </tag>
             
-            <tag> Dynamic Programming </tag>
+            <tag> Chinese </tag>
             
             <tag> BFS and DFS </tag>
+            
+            <tag> Dynamic Programming </tag>
             
         </tags>
       
@@ -474,9 +609,9 @@
             
             <tag> Chinese </tag>
             
-            <tag> Binary Search </tag>
-            
             <tag> Difference Constraints </tag>
+            
+            <tag> Binary Search </tag>
             
         </tags>
       
@@ -656,9 +791,9 @@
             
             <tag> Chinese </tag>
             
-            <tag> Number Theory </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Number Theory </tag>
             
             <tag> Combinatorics </tag>
             
@@ -848,9 +983,9 @@
             
             <tag> Chinese </tag>
             
-            <tag> Balance Tree </tag>
-            
             <tag> Link Cut Tree </tag>
+            
+            <tag> Balance Tree </tag>
             
         </tags>
       
@@ -972,9 +1107,9 @@
             
             <tag> Dynamic Programming </tag>
             
-            <tag> Computation Geometry </tag>
-            
             <tag> Graph Theory </tag>
+            
+            <tag> Computation Geometry </tag>
             
             <tag> Tarjan&#39;s Algorithm </tag>
             
@@ -1036,29 +1171,29 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> AC Automaton </tag>
             
             <tag> String Manipulation </tag>
             
+            <tag> Chinese </tag>
+            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Graph Theory </tag>
+            
+            <tag> Mo&#39;s Algorithm </tag>
             
             <tag> Polya Theorem </tag>
             
             <tag> Balance Tree </tag>
             
-            <tag> Computation Geometry </tag>
-            
-            <tag> Graph Theory </tag>
-            
             <tag> Gaussian Elimination </tag>
             
             <tag> Network Flow </tag>
             
-            <tag> Hash </tag>
+            <tag> Computation Geometry </tag>
             
-            <tag> Mo&#39;s Algorithm </tag>
+            <tag> Hash </tag>
             
         </tags>
       
@@ -1358,11 +1493,11 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> AC Automaton </tag>
             
             <tag> String Manipulation </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Matrix </tag>
             
@@ -1391,11 +1526,11 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> AC Automaton </tag>
             
             <tag> String Manipulation </tag>
+            
+            <tag> Chinese </tag>
             
         </tags>
       
@@ -1426,13 +1561,13 @@
             
             <tag> Dynamic Programming </tag>
             
-            <tag> Binary Search </tag>
+            <tag> Chain Subdivision </tag>
             
-            <tag> Linked List </tag>
+            <tag> Binary Search </tag>
             
             <tag> Computation Geometry </tag>
             
-            <tag> Chain Subdivision </tag>
+            <tag> Linked List </tag>
             
         </tags>
       
@@ -1492,11 +1627,11 @@
             
             <tag> Chinese </tag>
             
+            <tag> Segment Tree </tag>
+            
             <tag> Binary Search </tag>
             
             <tag> Greedy </tag>
-            
-            <tag> Segment Tree </tag>
             
         </tags>
       
@@ -1614,9 +1749,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> String Manipulation </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Suffix Array </tag>
             
@@ -1645,9 +1780,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Coding Style </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> Coding Style </tag>
             
         </tags>
       
