@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>动手学深度学习笔记 6-损失函数</title>
+      <link href="/2022/08/04/d2l-6/"/>
+      <url>/2022/08/04/d2l-6/</url>
+      
+        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/04/rViwjz5pkYnPX23.png" alt="6-损失函数.png"></p><p>L2 Loss 优势在于离最优点越近，梯度越小，起到微调的效果，且使得损失函数收敛。劣势在于当离最优点过远时，梯度可能会过于大，导致在最优点的两侧反复横跳，收敛过慢。</p><p><img src="https://s2.loli.net/2022/08/04/zRCu7tmnBMsvVqD.png" alt="6-损失函数-1.png"></p><p>L2 Loss 优势在于离最优点过远时，梯度不会特别大。劣势在于当离最优点过近时，无法进一步逼近，无法收敛。</p><p><img src="https://s2.loli.net/2022/08/04/pcEmSzlw4BP293W.png" alt="6-损失函数-2.png"></p><p>可以看到 L1 Loss 和 L2 Loss 的优势是互补的，因此有 Huber’s Robust Loss 在离最优点近时采用 L2，在离最优点远时采用 L1，结合了两者的优势。 </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>动手学深度学习笔记 5-多层感知机</title>
       <link href="/2022/08/04/d2l-5/"/>
       <url>/2022/08/04/d2l-5/</url>
@@ -35,7 +62,7 @@
       <link href="/2022/08/04/d2l-4/"/>
       <url>/2022/08/04/d2l-4/</url>
       
-        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div>]]></content>
+        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/04/LgvYfFOD9sVAZyr.png" alt="4-softmax回归.png"></p><p><img src="https://s2.loli.net/2022/08/04/bzuh95CwAomBqtg.png" alt="4-softmax回归-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/9E8uQoD4fGvrzpm.png" alt="4-softmax回归-2.png"></p><p><img src="https://s2.loli.net/2022/08/04/MDP3obvdruQmcke.png" alt="4-softmax回归-3.png"></p><p>softmax 的数学基础来自统计学习方法，收到热力统计学启发而得。</p><p>关于 softmax 的数学内容，在 d2l 教材中有着更详细的说明。</p>]]></content>
       
       
       <categories>
