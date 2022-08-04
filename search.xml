@@ -384,33 +384,6 @@
     
     
     <entry>
-      <title>计算理论笔记 3-下推自动机的形式化定义</title>
-      <link href="/2020/05/20/Theory-of-Computation-3/"/>
-      <url>/2020/05/20/Theory-of-Computation-3/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2022/08/05/jwNy4x7dVcvatpg.png" alt="3-1.png"></p><p><img src="https://s2.loli.net/2022/08/05/WQj3opST5Xrxv9B.png" alt="3-2.png"></p><p><img src="https://s2.loli.net/2022/08/05/F8NhjHAIvVS1JXi.png" alt="3-3.png"></p><p><img src="https://s2.loli.net/2022/08/05/IcuLGPQnhRvwB7q.png" alt="3-4.png"></p><p><img src="https://s2.loli.net/2022/08/05/NSamLuI9OqEchBT.png" alt="3-5.png"></p><p><img src="https://s2.loli.net/2022/08/05/Qqwi31SC8Tnrbf7.png" alt="3-6.png"></p><p><img src="https://s2.loli.net/2022/08/05/EvfbBSCGug8oVqX.png" alt="3-7.png"></p><p><img src="https://s2.loli.net/2022/08/05/JWmLt9QBnSoVyui.png" alt="3-8.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Theory of Computation </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Chinese </tag>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>计算理论笔记 2-非正则语言，乔姆斯基范式</title>
       <link href="/2020/05/16/Theory-of-Computation-2/"/>
       <url>/2020/05/16/Theory-of-Computation-2/</url>
@@ -483,9 +456,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Linear Basis </tag>
             
@@ -514,13 +487,13 @@
             
             <tag> C/C++ </tag>
             
-            <tag> AC Automaton </tag>
-            
-            <tag> Chinese </tag>
-            
             <tag> BFS and DFS </tag>
             
+            <tag> AC Automaton </tag>
+            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
         </tags>
       
@@ -576,9 +549,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Virtual Tree </tag>
             
@@ -638,9 +611,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -671,9 +644,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> BFS and DFS </tag>
+            
+            <tag> Chinese </tag>
             
         </tags>
       
@@ -729,9 +702,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Chain Subdivision </tag>
             
@@ -789,9 +762,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
             
@@ -917,9 +890,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Combinatorics </tag>
             
@@ -1041,9 +1014,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Segment Tree </tag>
             
@@ -1103,9 +1076,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Graph Theory </tag>
             
@@ -1173,11 +1146,11 @@
             
             <tag> AC Automaton </tag>
             
-            <tag> String Manipulation </tag>
+            <tag> Dynamic Programming </tag>
             
             <tag> Chinese </tag>
             
-            <tag> Dynamic Programming </tag>
+            <tag> String Manipulation </tag>
             
             <tag> Graph Theory </tag>
             
@@ -1187,11 +1160,11 @@
             
             <tag> Balance Tree </tag>
             
+            <tag> Computation Geometry </tag>
+            
             <tag> Gaussian Elimination </tag>
             
             <tag> Network Flow </tag>
-            
-            <tag> Computation Geometry </tag>
             
             <tag> Hash </tag>
             
@@ -1495,9 +1468,9 @@
             
             <tag> AC Automaton </tag>
             
-            <tag> String Manipulation </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> String Manipulation </tag>
             
             <tag> Matrix </tag>
             
@@ -1528,9 +1501,9 @@
             
             <tag> AC Automaton </tag>
             
-            <tag> String Manipulation </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> String Manipulation </tag>
             
         </tags>
       
@@ -1557,17 +1530,17 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Chain Subdivision </tag>
             
             <tag> Binary Search </tag>
             
-            <tag> Computation Geometry </tag>
-            
             <tag> Linked List </tag>
+            
+            <tag> Computation Geometry </tag>
             
         </tags>
       
@@ -1594,9 +1567,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -1658,9 +1631,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -1687,9 +1660,9 @@
       
         <tags>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -1718,9 +1691,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -1749,9 +1722,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> String Manipulation </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> String Manipulation </tag>
             
             <tag> Suffix Array </tag>
             
