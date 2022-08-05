@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>动手学深度学习笔记 8-使用GPU进行深度学习</title>
+      <link href="/2022/08/05/d2l-8/"/>
+      <url>/2022/08/05/d2l-8/</url>
+      
+        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/05/2HMljK7AhrxvVZz.png" alt="8-使用GPU进行深度学习.png"></p><p><img src="https://s2.loli.net/2022/08/05/hLbxDdBpa7lFoRP.png" alt="8-使用GPU进行深度学习-1.png"></p><p><img src="https://s2.loli.net/2022/08/05/6Ts2xS1ivnp5lkX.png" alt="8-使用GPU进行深度学习-2.png"></p><p><img src="https://s2.loli.net/2022/08/05/74lSFfGxELdymiU.png" alt="8-使用GPU进行深度学习-3.png"></p><p><img src="https://s2.loli.net/2022/08/05/G1WyO86TEYdRD9w.png" alt="8-使用GPU进行深度学习-4.png"></p><p><img src="https://s2.loli.net/2022/08/05/YxhzW2Ovnol1buF.png" alt="8-使用GPU进行深度学习-5.png"></p><p><img src="https://s2.loli.net/2022/08/05/GaYm1jtuy5H2IvU.png" alt="8-使用GPU进行深度学习-6.png"></p><p>这一章比较实用，所以截了一些代码的截图。</p><p>图中的方法不仅能用来加速深度学习，同样能显著提升运用 python 进行其他数据科学运算的速度。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>动手学深度学习笔记 7-深度学习硬件CPU与GPU</title>
       <link href="/2022/08/05/d2l-7/"/>
       <url>/2022/08/05/d2l-7/</url>
@@ -63,33 +90,6 @@
       <url>/2022/08/04/d2l-5/</url>
       
         <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/04/vG8DkhjKWwenVYr.png" alt="5-感知机.png"></p><p><img src="https://s2.loli.net/2022/08/04/QVbAWsehZUHT6jc.png" alt="5-感知机-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/T23hbkE6yolRNJj.png" alt="5-感知机-2.png"></p><p><img src="https://s2.loli.net/2022/08/04/hPm9Wz682QHTp3N.png" alt="5-感知机-3.png"></p><p><img src="https://s2.loli.net/2022/08/04/3c5lzkvjMOVeFNG.png" alt="5-感知机-4.png"></p><p><img src="https://s2.loli.net/2022/08/04/wRep6V9WNrvhmgM.png" alt="5-感知机-5.png"></p><p><img src="https://s2.loli.net/2022/08/04/MNa1Jte8oqrh5pU.png" alt="5-感知机-6.png"></p><p><img src="https://s2.loli.net/2022/08/04/ARP81vzSjLcGegk.png" alt="5-感知机-7.png"></p><p><img src="https://s2.loli.net/2022/08/04/PErQnYbizBTgFAl.png" alt="5-感知机-8.png"></p><p><img src="https://s2.loli.net/2022/08/04/t8jlQIxa3X45UgB.png" alt="5-感知机-9.png"></p><p><img src="https://s2.loli.net/2022/08/04/GRAlBFdegO8xD3m.png" alt="5-感知机-10.png"></p><p><img src="https://s2.loli.net/2022/08/04/rhxkwIBOL8CQVF9.png" alt="5-感知机-11.png"></p><p>关于多层感知机的知识，还需要结合更深入的学习进一步理解。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Machine Learning </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Chinese </tag>
-            
-            <tag> d2l </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>动手学深度学习笔记 8-使用GPU进行深度学习</title>
-      <link href="/2022/08/04/d2l-8/"/>
-      <url>/2022/08/04/d2l-8/</url>
-      
-        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/05/2HMljK7AhrxvVZz.png" alt="8-使用GPU进行深度学习.png"></p><p><img src="https://s2.loli.net/2022/08/05/hLbxDdBpa7lFoRP.png" alt="8-使用GPU进行深度学习-1.png"></p><p><img src="https://s2.loli.net/2022/08/05/6Ts2xS1ivnp5lkX.png" alt="8-使用GPU进行深度学习-2.png"></p><p><img src="https://s2.loli.net/2022/08/05/74lSFfGxELdymiU.png" alt="8-使用GPU进行深度学习-3.png"></p><p><img src="https://s2.loli.net/2022/08/05/G1WyO86TEYdRD9w.png" alt="8-使用GPU进行深度学习-4.png"></p><p><img src="https://s2.loli.net/2022/08/05/YxhzW2Ovnol1buF.png" alt="8-使用GPU进行深度学习-5.png"></p><p><img src="https://s2.loli.net/2022/08/05/GaYm1jtuy5H2IvU.png" alt="8-使用GPU进行深度学习-6.png"></p><p>这一章比较实用，所以截了一些代码的截图。</p><p>图中的方法不仅能用来加速深度学习，同样能显著提升运用 python 进行其他数据科学运算的速度。</p>]]></content>
       
       
       <categories>
@@ -487,13 +487,13 @@
             
             <tag> C/C++ </tag>
             
-            <tag> BFS and DFS </tag>
-            
-            <tag> AC Automaton </tag>
-            
             <tag> Dynamic Programming </tag>
             
             <tag> Chinese </tag>
+            
+            <tag> BFS and DFS </tag>
+            
+            <tag> AC Automaton </tag>
             
         </tags>
       
@@ -644,9 +644,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> BFS and DFS </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> BFS and DFS </tag>
             
         </tags>
       
@@ -764,11 +764,11 @@
             
             <tag> Dynamic Programming </tag>
             
+            <tag> Combinatorics </tag>
+            
             <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
-            
-            <tag> Combinatorics </tag>
             
         </tags>
       
@@ -795,11 +795,11 @@
             
             <tag> C/C++ </tag>
             
+            <tag> Combinatorics </tag>
+            
             <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
-            
-            <tag> Combinatorics </tag>
             
         </tags>
       
@@ -892,13 +892,13 @@
             
             <tag> Dynamic Programming </tag>
             
-            <tag> Chinese </tag>
-            
             <tag> Combinatorics </tag>
             
             <tag> Fast Fourier Transform </tag>
             
             <tag> Fast Number Theory Transform </tag>
+            
+            <tag> Chinese </tag>
             
         </tags>
       
@@ -1111,11 +1111,11 @@
             
             <tag> C/C++ </tag>
             
+            <tag> Combinatorics </tag>
+            
             <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
-            
-            <tag> Combinatorics </tag>
             
             <tag> Mobius Inversion </tag>
             
@@ -1144,15 +1144,15 @@
             
             <tag> C/C++ </tag>
             
-            <tag> AC Automaton </tag>
-            
             <tag> Dynamic Programming </tag>
             
             <tag> Chinese </tag>
             
-            <tag> String Manipulation </tag>
+            <tag> AC Automaton </tag>
             
             <tag> Graph Theory </tag>
+            
+            <tag> String Manipulation </tag>
             
             <tag> Mo&#39;s Algorithm </tag>
             
@@ -1222,11 +1222,11 @@
             
             <tag> C/C++ </tag>
             
+            <tag> Combinatorics </tag>
+            
             <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
-            
-            <tag> Combinatorics </tag>
             
         </tags>
       
@@ -1253,11 +1253,11 @@
             
             <tag> C/C++ </tag>
             
+            <tag> Combinatorics </tag>
+            
             <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
-            
-            <tag> Combinatorics </tag>
             
             <tag> Polya Theorem </tag>
             
@@ -1286,11 +1286,11 @@
             
             <tag> C/C++ </tag>
             
+            <tag> Combinatorics </tag>
+            
             <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
-            
-            <tag> Combinatorics </tag>
             
             <tag> Polya Theorem </tag>
             
@@ -1466,9 +1466,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> AC Automaton </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> AC Automaton </tag>
             
             <tag> String Manipulation </tag>
             
@@ -1499,9 +1499,9 @@
             
             <tag> C/C++ </tag>
             
-            <tag> AC Automaton </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> AC Automaton </tag>
             
             <tag> String Manipulation </tag>
             
