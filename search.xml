@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>政治性抑郁，失范性自杀</title>
+      <link href="/2022/08/23/2020-08-31-suicide/"/>
+      <url>/2022/08/23/2020-08-31-suicide/</url>
+      
+        <content type="html"><![CDATA[<p>本文为转载，原作者为于 2020 年 08 月 31 日选择结束自己生命的一名南京航空航天大学学生。</p><h2 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h2><p>很抱歉大家，突然就要说告别了。在大家看到这条定时说说的时候，我已经于宿舍九楼活动室自杀，在＠到的人当中，烦请其中的亲戚告知我的父母。我的空间有一条写给母亲的遗书，仅对她可见，请务必吩咐她看一看。</p><p>疫情以来在家里沉下来考虑了很久，终究是做出了这个决定。想写下一些最后的心思，却不知为谁去写，教谁来听。纯当一个可怜人的叨叨自语，姑妄听之吧。</p><p>很多年来自己一直强装正常，其实心早已如死灰槁木，人似行尸走肉。强装的总归是不自然，相信身边很多人都能或多或少察觉到我的异处。</p><p>我一直是个很极端的理想主义者，对人和社会常常有极大的洁癖。在资本盛行的年代，所有的美丽成为利己的粉饰，所有的资源成为剥削的剃刀。人们有的被生计就已经折磨得不成样，有的为了单薄的体面如履薄冰。多数人都无法获得自由与尊严，混沌一生，终是个悲剧；而剩下的却也不得不精明地吸血，时而卑鄙折节。上寻下索，都是一张张冷血的脸，精致地把弱肉强食奉为圣经。人与人之间，多的是相互计算与榨取，灯火辉煌的世界为一片空前残忍，杀人不见血的丛林。在这世界，看到的不是一个个人，而是一串串衡量价值的数字。价值，也多逃不开掌权者的需求，躲不过资本的青睐。几年前我就开始想，为了加大自己的数字而去成为一个奴隶究竟有什么意义。想想自己的未来，靠一门自身无感的知识谋求生计，为立足去接受自己所抗拒的规则，去逢迎不喜欢的人们，去站到自己的对立面，拿着那些扭曲的价值又该货与何处，换得何物？在这种环境下，我曾经选择过得很犬儒，不管遇到什么，都会先想起戴奥真尼斯那句“你挡住了我的太阳”。可是犬儒终究是一种逃避，我只是一个被当下环境塑造的普通人，到底还是无法超脱于社会。在另一个极端，也曾想过做一个像岳昕，沈梦雨，顾佳悦，张云帆那样逆流而上的人，奈何力有所不及，智有所不能，意有所不坚。在荆棘丛中自处已是不易，遑论杀出一条血路来。火焰燃烧得越旺盛，熄灭后的灰烬却也越多。对周遭已无渴求，继续下去又是为了什么呢？当拒绝妥协却又难以改变的时候，便用血写下最后一首耻辱的诗。</p><p>并不想为自己的行为做什么辩解，讨论什么对错，这只是一份自白，试图寻求些许理解。或许有一千个不应如此的理由，可世事又何曾在每一个具体的人身上都按照理想的大道理运行呢？这个世界或许还有许多美丽未曾经历，许多未知值得探索，可都被当下持续的痛苦所击溃。纵使千不该万不该，作为一个自私的病人，并不打算遵守亲朋对其亲朋，社会对其成员的期许与规范，亦不想为了飘渺的希望继续忍受可预见的苦难。</p><p>突然想到一句咏叹调，remember me，but forget my fate，很美好，却是无法兼得的，那便请彻底忘了我，谢谢。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Read Think Write </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2022年08月17日 书单</title>
       <link href="/2022/08/17/2022-08-17-book-list/"/>
       <url>/2022/08/17/2022-08-17-book-list/</url>
@@ -13,14 +38,43 @@
       
       <categories>
           
-          <category> Literature </category>
+          <category> Read Think Write </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> Book List </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>动手学深度学习笔记 15-卷积神经网络</title>
+      <link href="/2022/08/06/d2l-15/"/>
+      <url>/2022/08/06/d2l-15/</url>
+      
+        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/06/iHGsMt27VJlDPCR.png" alt="15-卷积神经网络.png"></p><p><img src="https://s2.loli.net/2022/08/06/fjLu9A8nDQtX6CS.png" alt="15-卷积神经网络-1.png"></p><p>原本权重为二维，输入输出为一维向量，可以理解为从输入和输出分别选一个包含节点。</p><p>现在权重变为四维，输入输出为二维矩阵，可以理解为从输入和输出分别选一个包含宽高的节点。</p><p><img src="https://s2.loli.net/2022/08/06/qejW4Z3IfYVu6LP.png" alt="15-卷积神经网络-2.png"></p><p><img src="https://s2.loli.net/2022/08/06/nWatmZLbhCKGcDx.png" alt="15-卷积神经网络-3.png"></p><p><img src="https://s2.loli.net/2022/08/06/WifDsZNzjJR9rIg.png" alt="15-卷积神经网络-4.png"></p><p>交叉相关和卷积本质一样，只差了个负号。</p><p><img src="https://s2.loli.net/2022/08/06/QJjRIXcZKGgAfFz.png" alt="15-卷积神经网络-5.png"></p><p><img src="https://s2.loli.net/2022/08/06/MaSUECqvXen8WRh.png" alt="15-卷积神经网络-6.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Computer Science </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> d2l </tag>
             
         </tags>
       
@@ -38,7 +92,7 @@
       
       <categories>
           
-          <category> Machine Learning </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -65,7 +119,7 @@
       
       <categories>
           
-          <category> Machine Learning </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -92,7 +146,7 @@
       
       <categories>
           
-          <category> Machine Learning </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -119,7 +173,7 @@
       
       <categories>
           
-          <category> Machine Learning </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -141,12 +195,12 @@
       <link href="/2022/08/04/d2l-4/"/>
       <url>/2022/08/04/d2l-4/</url>
       
-        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/04/LgvYfFOD9sVAZyr.png" alt="4-softmax回归.png"></p><p><img src="https://s2.loli.net/2022/08/04/bzuh95CwAomBqtg.png" alt="4-softmax回归-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/9E8uQoD4fGvrzpm.png" alt="4-softmax回归-2.png"></p><p><img src="https://s2.loli.net/2022/08/04/MDP3obvdruQmcke.png" alt="4-softmax回归-3.png"></p><p>softmax 的数学基础来自统计学习方法，收到热力统计学启发而得。</p><p>关于 softmax 的数学内容，在 d2l 教材中有着更详细的说明。</p>]]></content>
+        <content type="html"><![CDATA[<div class="note info modern"><p><a href="https://github.com/d2l-ai/">Github主页</a><br><a href="https://courses.d2l.ai/zh-v2/">课程主页</a><br><a href="https://zh-v2.d2l.ai/">教材</a></p></div><p><img src="https://s2.loli.net/2022/08/04/LgvYfFOD9sVAZyr.png" alt="4-softmax回归.png"></p><p><img src="https://s2.loli.net/2022/08/04/bzuh95CwAomBqtg.png" alt="4-softmax回归-1.png"></p><p><img src="https://s2.loli.net/2022/08/04/9E8uQoD4fGvrzpm.png" alt="4-softmax回归-2.png"></p><p><img src="https://s2.loli.net/2022/08/04/MDP3obvdruQmcke.png" alt="4-softmax回归-3.png"></p><p>softmax 可以看作支持多分类的逻辑回归，关于逻辑回归的推导可看<a href="https://zhuanlan.zhihu.com/p/95132284">logistic回归原理与实现</a>，关于 softmax 的推导，可看<a href="https://zhuanlan.zhihu.com/p/98061179">softmax回归原理与实现</a></p><p>softmax 的数学基础来自统计学习方法，收到热力统计学启发而得。</p><p>关于 softmax 的数学内容，在 d2l 教材中有着更详细的说明。</p>]]></content>
       
       
       <categories>
           
-          <category> Machine Learning </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -173,7 +227,7 @@
       
       <categories>
           
-          <category> Machine Learning </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -254,7 +308,7 @@
       
       <categories>
           
-          <category> Machine Learning </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -281,7 +335,7 @@
       
       <categories>
           
-          <category> Machine Learning </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -418,7 +472,7 @@
       
       <categories>
           
-          <category> Theory of Computation </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -443,7 +497,7 @@
       
       <categories>
           
-          <category> Theory of Computation </category>
+          <category> Computer Science </category>
           
       </categories>
       
@@ -475,11 +529,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Linear Basis </tag>
             
@@ -506,15 +560,15 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
-            <tag> Dynamic Programming </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> BFS and DFS </tag>
             
             <tag> AC Automaton </tag>
+            
+            <tag> Dynamic Programming </tag>
             
         </tags>
       
@@ -539,9 +593,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Palindrome Tree </tag>
             
@@ -568,11 +622,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Virtual Tree </tag>
             
@@ -599,9 +653,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Difference Constraints </tag>
             
@@ -630,11 +684,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -663,9 +717,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> BFS and DFS </tag>
             
@@ -692,9 +746,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Mo&#39;s Algorithm </tag>
             
@@ -721,11 +775,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Chain Subdivision </tag>
             
@@ -752,9 +806,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Segment Tree </tag>
             
@@ -781,13 +835,13 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
             
             <tag> Combinatorics </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
             
@@ -814,11 +868,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Combinatorics </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
             
@@ -845,9 +899,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Segment Tree </tag>
             
@@ -876,9 +930,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Segment Tree </tag>
             
@@ -909,6 +963,8 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
@@ -918,8 +974,6 @@
             <tag> Fast Fourier Transform </tag>
             
             <tag> Fast Number Theory Transform </tag>
-            
-            <tag> Chinese </tag>
             
         </tags>
       
@@ -944,9 +998,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Balance Tree </tag>
             
@@ -973,9 +1027,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Link Cut Tree </tag>
             
@@ -1004,9 +1058,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Linear Basis </tag>
             
@@ -1033,11 +1087,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Segment Tree </tag>
             
@@ -1064,9 +1118,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Segment Tree </tag>
             
@@ -1095,11 +1149,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Graph Theory </tag>
             
@@ -1130,11 +1184,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Combinatorics </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
             
@@ -1163,17 +1217,17 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
-            <tag> Dynamic Programming </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> AC Automaton </tag>
             
-            <tag> Graph Theory </tag>
+            <tag> Dynamic Programming </tag>
             
             <tag> String Manipulation </tag>
+            
+            <tag> Graph Theory </tag>
             
             <tag> Mo&#39;s Algorithm </tag>
             
@@ -1212,9 +1266,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Graph Theory </tag>
             
@@ -1241,11 +1295,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Combinatorics </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
             
@@ -1272,11 +1326,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Combinatorics </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
             
@@ -1305,11 +1359,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Combinatorics </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Number Theory </tag>
             
@@ -1338,9 +1392,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Number Theory </tag>
             
@@ -1367,9 +1421,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Number Theory </tag>
             
@@ -1396,9 +1450,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Number Theory </tag>
             
@@ -1427,9 +1481,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Balance Tree </tag>
             
@@ -1456,9 +1510,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Balance Tree </tag>
             
@@ -1485,9 +1539,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> AC Automaton </tag>
             
@@ -1518,9 +1572,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> AC Automaton </tag>
             
@@ -1549,11 +1603,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Chain Subdivision </tag>
             
@@ -1586,11 +1640,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -1617,9 +1671,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Segment Tree </tag>
             
@@ -1650,11 +1704,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -1681,9 +1735,9 @@
       
         <tags>
             
-            <tag> Dynamic Programming </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> Dynamic Programming </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -1710,11 +1764,11 @@
       
         <tags>
             
+            <tag> Chinese </tag>
+            
             <tag> C/C++ </tag>
             
             <tag> Dynamic Programming </tag>
-            
-            <tag> Chinese </tag>
             
             <tag> Monotonicity In Decision </tag>
             
@@ -1741,9 +1795,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> String Manipulation </tag>
             
@@ -1772,9 +1826,9 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
-            
             <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
             
             <tag> Coding Style </tag>
             
