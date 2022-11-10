@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Conda 基础命令</title>
+      <link href="/2022/11/10/CondaUseage/"/>
+      <url>/2022/11/10/CondaUseage/</url>
+      
+        <content type="html"><![CDATA[<h2 id="使用-Conda-安装依赖包"><a href="#使用-Conda-安装依赖包" class="headerlink" title="使用 Conda 安装依赖包"></a>使用 Conda 安装依赖包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看当前 conda 环境安装的所有依赖包</span></span><br><span class="line">conda list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装新的依赖包</span></span><br><span class="line">conda install requests</span><br></pre></td></tr></table></figure><h2 id="创建-Conda-环境"><a href="#创建-Conda-环境" class="headerlink" title="创建 Conda 环境"></a>创建 Conda 环境</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 语法</span></span><br><span class="line">conda create --name &lt;env_name&gt; python=&lt;version&gt; [package_name1] [package_name2] [...]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例 创建一个名为 PaddleOCR 的环境， python 版本为 3.7</span></span><br><span class="line">conda create --name PaddleOCR python=3.7</span><br></pre></td></tr></table></figure><h2 id="切换-Conda-环境"><a href="#切换-Conda-环境" class="headerlink" title="切换 Conda 环境"></a>切换 Conda 环境</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到 PaddleOCR 环境</span></span><br><span class="line">conda activate PaddleOCR</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出当前环境</span></span><br><span class="line">conda deactivate</span><br></pre></td></tr></table></figure><h2 id="查看电脑上已安装的-Conda-环境"><a href="#查看电脑上已安装的-Conda-环境" class="headerlink" title="查看电脑上已安装的 Conda 环境"></a>查看电脑上已安装的 Conda 环境</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure><h2 id="删除某个-Conda-环境"><a href="#删除某个-Conda-环境" class="headerlink" title="删除某个 Conda 环境"></a>删除某个 Conda 环境</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 语法</span></span><br><span class="line">conda remove --name &lt;env_name&gt; --all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例 移除环境</span></span><br><span class="line">conda remove --name PaddleOCR --all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 语法</span></span><br><span class="line">conda remove --name &lt;env_name&gt; &lt;package_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例 移除环境中某个依赖</span></span><br><span class="line">conda remove --name PaddleOCR requests</span><br></pre></td></tr></table></figure><h2 id="导出-Conda-环境"><a href="#导出-Conda-环境" class="headerlink" title="导出 Conda 环境"></a>导出 Conda 环境</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一次性将环境内的包导出</span></span><br><span class="line">conda list --explicit &gt; /opt/env.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一次性将环境内的包导入</span></span><br><span class="line">conda install --file /opt/env.txt</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Coding Itself </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> Conda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《海潮之声》影评：吉卜力的另类，在虚拟中追求真实的青春物语</title>
       <link href="/2022/08/24/The-Ocean-Waves/"/>
       <url>/2022/08/24/The-Ocean-Waves/</url>
