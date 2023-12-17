@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>序列单调递增的最小代价</title>
+      <link href="/2023/04/05/Cost-of-Monotonically-Increasing-Sequences/"/>
+      <url>/2023/04/05/Cost-of-Monotonically-Increasing-Sequences/</url>
+      
+        <content type="html"><![CDATA[<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>已知序列$a_1,a_2,…, a_n$，对于$a_i$，可以花费$b_i$的代价将$a_i$增加$1$，花费$c_i$的代价将$a_i$减小$1$，求将序列$a$变为非严格单调递增的最小代价。</p><p>最朴素的动态规划：设$f_{i,j}$表示只考虑前$i$个位置，且$a_i$的值变为$j$时的最小代价。</p><p>$$f_{i,j}=min_{k&lt;=j}f_{i-1,k}+(a_i-j)*c_i \ (a_i\geq j)$$</p><p>$$f_{i,j}=min_{k&lt;=j}f_{i-1,k}+(j-a_i)*b_i \ (a_i\leq j)$$</p><p>设$pre_{i,j}=min_{k&lt;=j}f_{i,k}$</p><p>则上文中动态规划方程变为：</p><p>$$f_{i,j}=pre_{i-1,j}+(a_i-j)*c_i \ (a_i\geq j)$$</p><p>$$f_{i,j}=pre_{i-1,j}+(j-a_i)*b_i \ (a_i\leq j)$$</p><p>可以将$j$看作横坐标，$f_{i,j}$看为纵坐标，则通过归纳法（证明的过程实际就是下述维护函数的过程）可证明该函数是凹函数，斜率单调不降。</p><p>因此，可以将解题过程分为两步：</p><ol><li><p>在函数中将$f_{i-1,j}$替换为$pre_{i-1,j}$，由于$f$为凹函数，因此可以通过在栈中维护函段将所有栈顶斜率大于$0$的线段替换为一个斜率等于$0$的线段。</p></li><li><p>将函数$pre_{i-1}$与函数$|a_i-j|*(a_i\geq j\ ?\ c_i\ : \ b_i)$（显然该函数为$V$形）求和，得到$f_i$。可以通过在栈中维护斜率变换处和斜率变化值来维护，显然将$pre$与$V$形函数求和只会在$a_i$处插入一个斜率变换值$b_i+c_i$。（注意同时要维护第一条线段的斜率和最后一条线段的斜率）</p></li></ol><p>重复以上两步$n$次，得到$f_n$的函数图象，然后算出$f_{n,min { a_i}}$的函数值（显然，将所有$a_i$变为最小值即可），再通过函数图象递推出所有斜率变化处的函数值，取最小值即可得到答案。</p><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span>+<span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">ll a[N],b[N],c[N];</span><br><span class="line">multiset&lt;pair&lt;ll,ll&gt;&gt; s;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;T);</span><br><span class="line"><span class="keyword">while</span>(T--)&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;b[i]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;c[i]);</span><br><span class="line">ll lk=<span class="number">0</span>,rk=<span class="number">0</span>;</span><br><span class="line">s.<span class="built_in">clear</span>();</span><br><span class="line">s.<span class="built_in">insert</span>(&#123;<span class="number">0</span>,<span class="number">0</span>&#125;);</span><br><span class="line">ll now=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line"><span class="keyword">while</span>(rk&gt;<span class="number">0</span>)&#123;</span><br><span class="line"><span class="built_in">assert</span>(s.<span class="built_in">size</span>());</span><br><span class="line"><span class="keyword">auto</span> p=<span class="built_in">prev</span>(s.<span class="built_in">end</span>());</span><br><span class="line">ll x=p-&gt;first,val=p-&gt;second;</span><br><span class="line">s.<span class="built_in">erase</span>(p);</span><br><span class="line">rk-=val;</span><br><span class="line"><span class="keyword">if</span>(rk&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">s.<span class="built_in">insert</span>(&#123;x,-rk&#125;);</span><br><span class="line">rk=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">lk-=c[i];</span><br><span class="line">rk+=b[i];</span><br><span class="line">s.<span class="built_in">insert</span>(&#123;a[i],b[i]+c[i]&#125;);</span><br><span class="line">now+=a[i]*c[i];</span><br><span class="line">&#125;</span><br><span class="line">ll ans=now,last=<span class="number">0</span>,k=lk;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> p:s)&#123;</span><br><span class="line">now+=k*(p.first-last);</span><br><span class="line">last=p.first;</span><br><span class="line">k+=p.second;</span><br><span class="line">ans=<span class="built_in">min</span>(ans,now);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">assert</span>(k==rk);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> OI / ACM (Algo. Competition) </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chinese </tag>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> Dynamic Programming </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Prufer 序列</title>
       <link href="/2023/03/27/Prufer-Sequence/"/>
       <url>/2023/03/27/Prufer-Sequence/</url>
